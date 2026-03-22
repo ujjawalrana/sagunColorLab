@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sagun Color Lab &amp; Studio | Morena's Premier Visual Curators</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-container": "#007303",
+              "secondary": "#006e02",
+              "surface-container-low": "#f3f3f3",
+              "on-tertiary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-primary": "#ffffff",
+              "primary-container": "#0076d7",
+              "outline-variant": "#c1c7d4",
+              "secondary-container": "#86f971",
+              "surface-container-highest": "#e2e2e2",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed": "#1a1c1c",
+              "secondary-fixed-dim": "#6ddf5b",
+              "on-primary-fixed-variant": "#004786",
+              "tertiary-fixed-dim": "#c6c6c6",
+              "surface": "#f9f9f9",
+              "inverse-primary": "#a5c8ff",
+              "on-background": "#1a1c1c",
+              "on-surface-variant": "#414752",
+              "on-primary-fixed": "#001c3a",
+              "inverse-on-surface": "#f1f1f1",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed-variant": "#005301",
+              "on-secondary-fixed": "#002200",
+              "outline": "#717784",
+              "background": "#f9f9f9",
+              "on-tertiary-fixed-variant": "#454747",
+              "error-container": "#ffdad6",
+              "tertiary": "#5b5d5d",
+              "surface-variant": "#e2e2e2",
+              "surface-tint": "#005faf",
+              "on-tertiary-container": "#fdfdfd",
+              "tertiary-fixed": "#e2e2e2",
+              "primary-fixed": "#d4e3ff",
+              "surface-container": "#eeeeee",
+              "on-secondary": "#ffffff",
+              "on-primary-container": "#fffdff",
+              "surface-bright": "#f9f9f9",
+              "primary": "#005dac",
+              "on-surface": "#1a1c1c",
+              "surface-dim": "#dadada",
+              "secondary-fixed": "#89fc74",
+              "primary-fixed-dim": "#a5c8ff",
+              "inverse-surface": "#2f3131",
+              "tertiary-container": "#747575",
+              "surface-container-high": "#e8e8e8",
+              "surface-container-lowest": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+        }
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-auto-rows: 200px;
+            gap: 1.5rem;
+        }
+        .masonry-item-tall { grid-row: span 2; }
+        .masonry-item-wide { grid-column: span 2; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-[#005dac] dark:text-[#0076d7] uppercase font-headline">
+                Sagun Studio
+            </div>
+<div class="hidden md:flex items-center gap-8 font-['Plus_Jakarta_Sans'] font-medium text-sm tracking-wide">
+<a class="text-[#005dac] border-b-2 border-[#005dac] pb-1 transition-colors duration-300 ease-in-out" href="#">Portfolio</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-[#005dac] transition-colors duration-300 ease-in-out" href="#">Services</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-[#005dac] transition-colors duration-300 ease-in-out" href="#">Weddings</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-[#005dac] transition-colors duration-300 ease-in-out" href="#">About</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-[#005dac] transition-colors duration-300 ease-in-out" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-headline font-semibold text-sm scale-95 active:scale-100 transition-transform shadow-lg shadow-primary/20">
+                Book Session
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover brightness-[0.85]" data-alt="Professional camera lens and photography equipment in studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9o3FIrqrQqbhT2VZbPNs3cfDx6IcADIYW6TeabB2lHI4QFvDoumhf-tuPZhu-3vuL_HO0sJ6iFXpKPC0PN3YbAAIOHWP-T_-CV4V2L3qqJ4BYhRtN8ksTVBhmFSGa2OqBjxfC9ZRYwQEwApKDiT8i7SC7rh99XUHPxYQsgtELu214P7BLOQB-ekoSICKh6u6Ezul5D9pdS8pzBtV-WWjVmzWJaj0vGqxSQoKuP883UmmTCoKwqB5musle9CSsJwaD1ynM9qLbYJo"/>
+<div class="absolute inset-0 bg-gradient-to-r from-on-primary-fixed/60 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+<div class="max-w-2xl">
+<span class="inline-block text-primary-fixed font-headline font-bold tracking-[0.2em] uppercase text-xs mb-4">Established 2004</span>
+<h1 class="text-white font-headline font-extrabold text-5xl md:text-7xl leading-tight mb-6">
+                    Capturing Moments,<br/><span class="text-primary-fixed">Creating Memories.</span>
+</h1>
+<p class="text-white/90 text-lg md:text-xl mb-10 font-light max-w-lg leading-relaxed">
+                    Morena's premier photography studio and high-end color lab. Elevating your stories into timeless visual masterpieces.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-headline font-bold text-base shadow-xl shadow-primary/30 hover:bg-primary-container transition-all">
+                        Book a Session
+                    </button>
+<button class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-lg font-headline font-bold text-base hover:bg-white/20 transition-all">
+                        View Portfolio
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<!-- Services Bento Grid -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-xl">
+<h2 class="text-primary font-headline font-extrabold text-4xl mb-4">Our Creative Expertise</h2>
+<p class="text-on-surface-variant text-lg">From intimate portraits to large-scale commercial campaigns, we bring precision and passion to every frame.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Wedding -->
+<div class="group relative overflow-hidden rounded-xl bg-surface-container-lowest p-8 md:col-span-2 flex flex-col md:flex-row gap-8 transition-all hover:shadow-xl">
+<div class="md:w-1/2">
+<span class="material-symbols-outlined text-primary text-4xl mb-6 block" data-icon="favorite">favorite</span>
+<h3 class="text-2xl font-headline font-bold mb-3">Wedding Photography</h3>
+<p class="text-on-surface-variant leading-relaxed">Cinematic storytelling of your most precious day. We capture the emotions, the details, and the heritage of your celebration.</p>
+</div>
+<div class="md:w-1/2 rounded-lg overflow-hidden h-48 md:h-auto">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Traditional wedding couple portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTCPHl8P7npAJCR54nwxN_1GWZxr1EIturyF7a9FkiUWWUEJ7Kuz8fns2GOy0Yd45zH-_n1R6FGRRCgsRMZEW55IJqGJNMnLeEqTjtYWKBJbcKbkPxI6BybjAWsjgJzoIQaQFK4wnok9AbQVTahpkM7Ad7krAd4ypx2z4MJH1fY2_G8Qx4I0b_Z2fvL2b5E58uw0nLz9XgTIK_xpREWNHKeGp144vc9M16XXw41ITX3Wtbts8muCD33ejg9E1ksC8glI26PlKJMMo"/>
+</div>
+</div>
+<!-- Portrait -->
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col transition-all hover:shadow-xl">
+<span class="material-symbols-outlined text-primary text-4xl mb-6 block" data-icon="face">face</span>
+<h3 class="text-2xl font-headline font-bold mb-3">Portrait Studio</h3>
+<p class="text-on-surface-variant leading-relaxed">Professional studio lighting and expert direction for individual, family, and corporate headshots.</p>
+</div>
+<!-- Product -->
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col transition-all hover:shadow-xl">
+<span class="material-symbols-outlined text-primary text-4xl mb-6 block" data-icon="shopping_bag">shopping_bag</span>
+<h3 class="text-2xl font-headline font-bold mb-3">Product Photography</h3>
+<p class="text-on-surface-variant leading-relaxed">High-definition imagery designed to make your products stand out in the marketplace.</p>
+</div>
+<!-- Events & Commercial -->
+<div class="group relative overflow-hidden rounded-xl bg-surface-container-lowest p-8 md:col-span-2 flex flex-col md:flex-row-reverse gap-8 transition-all hover:shadow-xl">
+<div class="md:w-1/2">
+<span class="material-symbols-outlined text-primary text-4xl mb-6 block" data-icon="campaign">campaign</span>
+<h3 class="text-2xl font-headline font-bold mb-3">Commercial &amp; Events</h3>
+<p class="text-on-surface-variant leading-relaxed">Comprehensive coverage for corporate events, brand activations, and large-scale industrial projects.</p>
+</div>
+<div class="md:w-1/2 rounded-lg overflow-hidden h-48 md:h-auto">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Dynamic event crowd at a professional gala" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw5rvTyfxHYpJqfaL92H_w99LVx2cUE5ZBESzU5LrssPeIjFpfoTcdPMi1OMOciR8SO6LDdz8dG78cR_p16U1bTeZThaCJI1YhvH-pKXFhSkMNzVk277zjB1Yv0USB3Rz4heLRea8d9giixel6tRZUSN-vNOT7fJslcpUY8xqzMK6CeWbNaKYLKtfnsx-lBTNwK3fzWxRwfW3newpkYuTj7pFO3gfdDPtqEKqXaKysmkOwq5wMNDPgWqmYR5pzOOzSMdsnOSlMhF4"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Color Lab Section -->
+<section class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="aspect-square rounded-2xl overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="High quality professional photo printer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI6GLoRSN8sKY7ET6V0_sU4ORvzxZYEw9hYmI0HtiIYdJYmudojfB87dO9lBK9-397sglU-ZYBfBohA-XvwXsoC2bl7DRNagFGOAyIEZmcerXLkk1RgJrKIqDlgLeYYQTkruiTQczUhZqNgDeoXENUacMYHy10kCCsQu4s0afl8DY96a14LPtI1OwlwsEaaV8YdmmRoNI0dBTADRxmrG41-YtA54NDxkUo-X6OnZKVjZmfsnrYRyaZL3UUnNM-uz02LQcblNr8pBs"/>
+</div>
+<div class="absolute -bottom-8 -right-8 bg-primary p-8 rounded-xl shadow-xl max-w-xs hidden md:block">
+<p class="text-white font-headline font-bold text-lg mb-2">Crystal Clear Precision</p>
+<p class="text-white/80 text-sm">Our Noritsu lab equipment ensures every print matches the professional standard of your original files.</p>
+</div>
+</div>
+<div>
+<h2 class="text-primary font-headline font-extrabold text-4xl mb-8">Professional Color Lab Services</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="print">print</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold mb-2">High-End Photo Printing</h4>
+<p class="text-on-surface-variant">Archival quality prints in multiple finishes—glossy, matte, and metallic—up to wide-format posters.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="auto_fix_high">auto_fix_high</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold mb-2">Digital Restoration</h4>
+<p class="text-on-surface-variant">Breathing new life into vintage photos. We remove scratches, restore colors, and repair tears with digital precision.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="featured_seasonal">featured_seasonal_and_gifts</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold mb-2">Personalized Photo Gifts</h4>
+<p class="text-on-surface-variant">Custom albums, mugs, canvases, and frames that transform your memories into tangible treasures.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Gallery -->
+<section class="py-24 bg-surface-container-low overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 mb-16">
+<h2 class="text-primary font-headline font-extrabold text-4xl text-center mb-4">Our Gallery</h2>
+<div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="max-w-[1400px] mx-auto px-4">
+<div class="masonry-grid">
+<div class="masonry-item-tall rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cinematic wedding ceremony moment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCbQ29q6upeDRbTYIa2l6s_2UTESs6rStVFa6xEFEo-AukET3bH_3qgvTlzNA3S2Z-ncbO5LXdyFqdWc4H_seiYh0UsNJsJA2fsV0Iso6YdIcu-VvCIPFw4b3JagJhidMIQrKg_aYJejbBtCuTRd8ElIqSUsUBz2v2qaG3JyfoRNSaaEZQ-_UEjPe4dxYPedasaInG_57WzFCX5t2j1BWt2u-rdCCeNNh6RJMoSdw-aL5lLA-MGxbD0U_Ge0GUMo1768mSKrrtbV0"/>
+</div>
+<div class="rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High-fashion studio portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZAmxWHgguczCz5eC51Q4UUPjr7TiO4IcBy1nwZUSqLoaKbU3FrW4LaDGqo-CNwo7wy40dS2PASdJK-ewGtggDl3WOcPYA6Pvw3RpASsNjQX3CD30XCqVe7-aiADTRIblP21jKO49qlwzvolet1G7hXkCz7vYt5PUShQ5KmdM_bWYWaA9oUcGuwgVwz1xn0MDsTG1ezE7TwUjT7Zwbbfqhr2ehnvy4xhQABKivy2v1IUS4IrgG1pnVL0dr2bDqLF4DOTZUP9SYrSY"/>
+</div>
+<div class="masonry-item-wide rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Urban street photography shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc6Djt3Zo_Y1TNh4mfdNfI7dVNS56nzYHAAiN88bc0OvXGrOo7RUTnFVsTE0h0LJJjXbvrkMhHrCSozSdNg2LVH1AvrRz6FqK7u1XuhKX4q-KkfabI4-AXf7PNwqG0cQakMBUz9lyvjqmCZ71C_-4o-ovSHLd2DfIm2o4y3vVd0ECOwgyk_xhqj0keAOe8jWc-A8f4_K1tRengeMFSxQ6ekiisVQe-7d2_5a_-81QWLTGHi27FA4guXz3ztXXB6cP29G3eF09PlEg"/>
+</div>
+<div class="rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Elegant wedding rings and flowers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAitCcGZ-kD5wFCZkYh77LxRQ4nVhC2KF8Hgw1Ie9Ln_6uu4yDqqiK5stABnDcGgk457vCgSyDZka8gCCasY2zQTZ9OMDNu26gf7FsoAcg4QMAyDSNWtc1GuKF9nsnUVPyfyZNjjQEldPCi-A_9fFTGTwHp5tGDPvP6UIHk1fNOv08-k4djLW5c9vTl4-fPPRUiwz_VDIgtoXH6HyARv2AjioNxM7ZybPMZeIdsLdhw2Zpdq0zbK8bNXsUi9Oh7hcIQFJMT5sTF4Mk"/>
+</div>
+<div class="masonry-item-tall rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Breathtaking architectural photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACxgJugoseWW7Nj8F8CiDB5dmEqwUIe2d_LUrF82magw5Bn6ONSltEMu1A-cWIW1LijB5mTG-yvrdMfpHS6pd0_b58Uy8HCL-myFGgZlT1cKC--a1OWbogV88xrq2ytak7iZhwHk3aWVuvgf3Mxv-5fPeonduXNv2m7_e5bCJH6JjdV_IS3aiKkVx4caSpstSzsD_8kqCU-P2i0c-ib4w7TxoB3geMPYXx00Tj33TmWoMem9b9qZm-zXetdlg5E2RVuSQYt0Bp2Z0"/>
+</div>
+<div class="rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vibrant concert event lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHQinIIoyqC0WcgdZ56_o78b58srZZxxE9vPRv1YazPJ3OnX5SBRFT9DdbKHXZehwzaZlm-cT2Q1AbsnYZqqmi2NWbcTYMOVX2S27UlHK7TQz2bSEqaCtfU4qJUhx7CjP0bUEPIL7MfOonHp6M8fE67g8OH1QxBw7GxnZtahNloi-OlueBUlqsGWjN_WrNZi79n1x4J5AUcIX3h1PPTLsOEDYBpKrfK-6JqXDzXkXxREbFadh8EQ94vFRwteqYLhHLKerrVa-x5Lk"/>
+</div>
+</div>
+</div>
+</section>
+<!-- About & History -->
+<section class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-8">
+<div class="bg-surface-container-lowest rounded-3xl p-12 shadow-sm border border-outline-variant/10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="text-primary font-headline font-extrabold text-4xl mb-6">Since 2004, Creating the Visual Pulse of Morena.</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+                            Sagun Color Lab &amp; Studio began with a simple mission: to provide the highest quality visual services in Morena. Over two decades, we have evolved from a traditional color lab into a comprehensive digital studio that serves families, businesses, and artists alike.
+                        </p>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<p class="text-4xl font-headline font-extrabold text-primary mb-1">20+</p>
+<p class="text-sm text-slate-500 uppercase tracking-widest font-semibold">Years Experience</p>
+</div>
+<div>
+<p class="text-4xl font-headline font-extrabold text-primary mb-1">10k+</p>
+<p class="text-sm text-slate-500 uppercase tracking-widest font-semibold">Clients Served</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<img class="rounded-xl w-full h-64 object-cover" data-alt="Studio history and heritage photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsI5PdnrbvzfuNmqmNbcIo6bH1v6oSd9h4wvPBQQO0-5yG7GnZMNAPpgm-GfwHmZfd-qb2DCE_99e2lUQEt8zFtDeyFg38xPUCWFtQE_cSDkhsTGkw-edUZ1QMjnIu5tDCpqof_nmOhIvUn-y9BOyfZom4nQXuRZpMmtq0c0JTEaRHimQ-WnKAGzEFqXExw2JbmH2oWBhbWONdZjqFR9p7vxKfDQzUG8HlFOUoRpF9k3m81O8Zcj5VTTs_-UDoCAM_NoaGPxElKoM"/>
+<img class="rounded-xl w-full h-64 object-cover mt-8" data-alt="Professional camera in studio setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXSpJ0G89kDPGM4mg0dlxr1clfeADDPVLZJglSB1h3u4AvqXJNHtkabGG7sUTltb21b1LJcTpDBVjXlv8iKv0V0-OG1LcfMouc2aTRhmTG7zSZWCarGi4EsQCubyvOGSGsAqfSAHJN2g3ZbxxewvzYU29D2ZV8RJ3TsBZuuhsYPSSxwI1Q2CpAmyAIC9sLrH6asEEe-X6Pd8HAyutPtCz3lFcUmExsGaOwv20JoBOunPcV96Y5oCyzrErkG2IcVDmPVNGmhQyTGxw"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<div class="flex items-center justify-center gap-2 mb-4">
+<span class="material-symbols-outlined text-yellow-500" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-2xl font-headline font-bold">4.1</span>
+<span class="text-on-surface-variant">/ 5.0 (238 Ratings)</span>
+</div>
+<h2 class="text-primary font-headline font-extrabold text-4xl">What Our Clients Say</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-white p-8 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex gap-1 text-yellow-500 mb-4">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-on-surface mb-6 leading-relaxed">"The best photography studio in Morena. They captured our wedding so beautifully, and the photo album quality from their lab is unmatched."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">RK</div>
+<div>
+<p class="font-bold text-sm">Rahul Kushwah</p>
+<p class="text-xs text-slate-400">Local Guide</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex gap-1 text-yellow-500 mb-4">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star">star</span>
+</div>
+<p class="italic text-on-surface mb-6 leading-relaxed">"Excellent digital restoration work. They fixed a 50-year-old photo of my grandparents that was completely faded. Highly recommended!"</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">MS</div>
+<div>
+<p class="font-bold text-sm">Meera Sharma</p>
+<p class="text-xs text-slate-400">Regular Customer</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Location & Contact -->
+<section class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<div>
+<h2 class="text-primary font-headline font-extrabold text-4xl mb-8">Visit Our Studio</h2>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+<div>
+<p class="font-bold text-lg mb-1">Jiwaji Ganj, Morena</p>
+<p class="text-on-surface-variant">Madhya Pradesh, 476001</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>
+<div>
+<p class="font-bold text-lg mb-1">Operating Hours</p>
+<p class="text-on-surface-variant">10:00 AM - 08:00 PM (Monday - Sunday)</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="call">call</span>
+<div>
+<p class="font-bold text-lg mb-1">Contact Support</p>
+<p class="text-on-surface-variant">+91 (Morena Studio Line)</p>
+</div>
+</div>
+</div>
+<div class="mt-12 p-8 bg-surface-container-low rounded-2xl">
+<h4 class="font-headline font-bold text-xl mb-4">Book Your Date</h4>
+<form class="space-y-4">
+<input class="w-full bg-white border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary" placeholder="Your Name" type="text"/>
+<input class="w-full bg-white border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary" placeholder="Email Address" type="email"/>
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-headline font-bold">Inquire Now</button>
+</form>
+</div>
+</div>
+<div class="rounded-2xl overflow-hidden min-h-[400px] shadow-lg relative">
+<img class="w-full h-full object-cover" data-alt="Abstract map representing Morena city" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfIFUArvBW72Cl0FH_zmgqHoAZQu0_73AwwzNoJ8r8uZQIQVXjENLWMO_lrlIOjosUhtcqJS0Uk74_BHSXNJH8RTrXTdSlcKS1V3UDT0_AJU8RAdC9KxOrQljsm_jhyXRXbK9Vu_mfWfamt0QjnjnOXGjAKrG9xrSR0qktUZiH_ILYCp0pIcDMBRIosnKTbgb26snRAqGkwqJagLLdCa7AIGdu8__1TlXOkTZqHS1EcCVGo6iQjc9ieHLGlplavUWgFCpAc4Isieg"/>
+<div class="absolute inset-0 bg-primary/10 flex items-center justify-center">
+<div class="bg-white p-6 rounded-xl shadow-2xl flex items-center gap-4">
+<div class="bg-primary p-3 rounded-full">
+<span class="material-symbols-outlined text-white" data-icon="push_pin">push_pin</span>
+</div>
+<div>
+<p class="font-bold">Sagun Color Lab</p>
+<p class="text-xs text-slate-400">Open until 8:00 PM</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full border-t border-slate-100 dark:border-slate-800">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-12 gap-6 w-full max-w-7xl mx-auto">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-['Plus_Jakarta_Sans'] font-bold text-[#005dac] text-xl">Sagun Studio</span>
+<p class="font-['Inter'] text-xs text-slate-500 max-w-xs text-center md:text-left">
+                    © 2024 Sagun Color Lab &amp; Studio. Morena's Premier Visual Curators.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-['Inter'] text-xs text-slate-400 hover:text-slate-600 hover:underline transition-all" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-xs text-slate-400 hover:text-slate-600 hover:underline transition-all" href="#">Terms of Service</a>
+<a class="font-['Inter'] text-xs text-slate-400 hover:text-slate-600 hover:underline transition-all" href="#">Studio Location</a>
+<a class="font-['Inter'] text-xs text-slate-400 hover:text-slate-600 hover:underline transition-all" href="#">Career</a>
+</div>
+<div class="flex gap-4">
+<a class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center hover:bg-primary hover:text-white transition-all opacity-80 hover:opacity-100" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="photo_camera">photo_camera</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center hover:bg-primary hover:text-white transition-all opacity-80 hover:opacity-100" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="movie">movie</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center hover:bg-primary hover:text-white transition-all opacity-80 hover:opacity-100" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="share">share</span>
+</a>
+</div>
+</div>
+</footer>
+<!-- Contact Floating Pane -->
+<div class="fixed bottom-6 right-6 z-[60] md:z-auto">
+<button class="bg-primary text-white flex items-center gap-3 px-6 py-4 rounded-full shadow-2xl hover:scale-105 transition-transform">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-headline font-bold text-sm hidden sm:inline">Book a Session</span>
+</button>
+</div>
+</body></html>
