@@ -4,8 +4,12 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Sagun Color Lab & Studio | Morena's Premier Visual Curators</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
           tailwind.config = {
@@ -13,75 +17,26 @@
             theme: {
               extend: {
                 colors: {
-                  "on-secondary-container": "#007303",
-                  "secondary": "#006e02",
-                  "surface-container-low": "#f3f3f3",
-                  "on-tertiary": "#ffffff",
-                  "error": "#ba1a1a",
-                  "on-primary": "#ffffff",
-                  "primary-container": "#0076d7",
-                  "outline-variant": "#c1c7d4",
-                  "secondary-container": "#86f971",
-                  "surface-container-highest": "#e2e2e2",
-                  "on-error": "#ffffff",
-                  "on-tertiary-fixed": "#1a1c1c",
-                  "secondary-fixed-dim": "#6ddf5b",
-                  "on-primary-fixed-variant": "#004786",
-                  "tertiary-fixed-dim": "#c6c6c6",
-                  "surface": "#f9f9f9",
-                  "inverse-primary": "#a5c8ff",
-                  "on-background": "#1a1c1c",
-                  "on-surface-variant": "#414752",
-                  "on-primary-fixed": "#001c3a",
-                  "inverse-on-surface": "#f1f1f1",
-                  "on-error-container": "#93000a",
-                  "on-secondary-fixed-variant": "#005301",
-                  "on-secondary-fixed": "#002200",
-                  "outline": "#717784",
-                  "background": "#f9f9f9",
-                  "on-tertiary-fixed-variant": "#454747",
-                  "error-container": "#ffdad6",
-                  "tertiary": "#5b5d5d",
-                  "surface-variant": "#e2e2e2",
-                  "surface-tint": "#005faf",
-                  "on-tertiary-container": "#fdfdfd",
-                  "tertiary-fixed": "#e2e2e2",
-                  "primary-fixed": "#d4e3ff",
-                  "surface-container": "#eeeeee",
-                  "on-secondary": "#ffffff",
-                  "on-primary-container": "#fffdff",
-                  "surface-bright": "#f9f9f9",
                   "primary": "#005dac",
-                  "on-surface": "#1a1c1c",
-                  "surface-dim": "#dadada",
-                  "secondary-fixed": "#89fc74",
-                  "primary-fixed-dim": "#a5c8ff",
-                  "inverse-surface": "#2f3131",
-                  "tertiary-container": "#747575",
-                  "surface-container-high": "#e8e8e8",
-                  "surface-container-lowest": "#ffffff"
+                  "primary-fixed": "#d4e3ff",
+                  "surface-container-low": "#f3f3f3",
                 },
                 fontFamily: {
                   "headline": ["Plus Jakarta Sans"],
                   "body": ["Inter"],
-                  "label": ["Plus Jakarta Sans"]
                 },
-                borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
               },
             },
           }
     </script>
     <style>
-        /* ADDED: Smooth scrolling for the whole page */
-        html {
-            scroll-behavior: smooth;
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-nav {
-            backdrop-filter: blur(12px);
-        }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body { overflow-x: hidden; background-color: #f9f9f9; }
+        
+        /* Typing cursor style */
+        .typed-cursor { color: #d4e3ff; font-size: 0.9em; }
+
+        /* Masonry Grid Logic */
         .masonry-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -92,234 +47,193 @@
         .masonry-item-wide { grid-column: span 2; }
     </style>
 </head>
-<body class="bg-background text-on-background font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<body class="text-[#1a1c1c] font-body">
 
-<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md shadow-sm">
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-lg shadow-sm">
     <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-        <div class="text-xl font-bold tracking-tighter text-[#005dac] dark:text-[#0076d7] uppercase font-headline">
-            Sagun Studio
+        <div class="text-xl font-bold tracking-tighter text-[#005dac] uppercase font-headline">Sagun Studio</div>
+        <div class="hidden md:flex items-center gap-8 font-medium text-sm">
+            <a class="hover:text-[#005dac] transition-colors" href="#gallery">Portfolio</a>
+            <a class="hover:text-[#005dac] transition-colors" href="#services">Services</a>
+            <a class="hover:text-[#005dac] transition-colors" href="#about">About</a>
+            <a class="hover:text-[#005dac] transition-colors" href="#contact">Contact</a>
         </div>
-        <div class="hidden md:flex items-center gap-8 font-['Plus_Jakarta_Sans'] font-medium text-sm tracking-wide">
-            <a class="text-slate-600 hover:text-[#005dac] transition-colors duration-300" href="#gallery">Portfolio</a>
-            <a class="text-slate-600 hover:text-[#005dac] transition-colors duration-300" href="#services">Services</a>
-            <a class="text-slate-600 hover:text-[#005dac] transition-colors duration-300" href="#services">Weddings</a>
-            <a class="text-slate-600 hover:text-[#005dac] transition-colors duration-300" href="#about">About</a>
-            <a class="text-slate-600 hover:text-[#005dac] transition-colors duration-300" href="#contact">Contact</a>
-        </div>
-        <a href="#contact" class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-headline font-semibold text-sm scale-95 active:scale-100 transition-transform shadow-lg shadow-primary/20 text-center">
-            Book Session
-        </a>
+        <a href="#contact" class="bg-[#005dac] text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:scale-105 transition-transform shadow-lg shadow-primary/20">Book Session</a>
     </div>
 </nav>
 
-<header class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+<header class="relative min-h-screen flex items-center pt-20">
     <div class="absolute inset-0 z-0">
-        <img class="w-full h-full object-cover brightness-[0.85]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9o3FIrqrQqbhT2VZbPNs3cfDx6IcADIYW6TeabB2lHI4QFvDoumhf-tuPZhu-3vuL_HO0sJ6iFXpKPC0PN3YbAAIOHWP-T_-CV4V2L3qqJ4BYhRtN8ksTVBhmFSGa2OqBjxfC9ZRYwQEwApKDiT8i7SC7rh99XUHPxYQsgtELu214P7BLOQB-ekoSICKh6u6Ezul5D9pdS8pzBtV-WWjVmzWJaj0vGqxSQoKuP883UmmTCoKwqB5musle9CSsJwaD1ynM9qLbYJo"/>
-        <div class="absolute inset-0 bg-gradient-to-r from-on-primary-fixed/60 to-transparent"></div>
+        <img class="w-full h-full object-cover brightness-[0.6]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9o3FIrqrQqbhT2VZbPNs3cfDx6IcADIYW6TeabB2lHI4QFvDoumhf-tuPZhu-3vuL_HO0sJ6iFXpKPC0PN3YbAAIOHWP-T_-CV4V2L3qqJ4BYhRtN8ksTVBhmFSGa2OqBjxfC9ZRYwQEwApKDiT8i7SC7rh99XUHPxYQsgtELu214P7BLOQB-ekoSICKh6u6Ezul5D9pdS8pzBtV-WWjVmzWJaj0vGqxSQoKuP883UmmTCoKwqB5musle9CSsJwaD1ynM9qLbYJo"/>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent"></div>
     </div>
     <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
-        <div class="max-w-2xl">
+        <div class="max-w-3xl" data-aos="fade-right" data-aos-duration="1200">
             <span class="inline-block text-primary-fixed font-headline font-bold tracking-[0.2em] uppercase text-xs mb-4">Established 2004</span>
-            <h1 class="text-white font-headline font-extrabold text-5xl md:text-7xl leading-tight mb-6">
-                Capturing Moments,<br/><span class="text-primary-fixed">Creating Memories.</span>
+            <h1 class="text-white font-headline font-extrabold text-5xl md:text-7xl leading-tight mb-6 min-h-[160px]">
+                <span id="typed-text"></span>
             </h1>
-            <p class="text-white/90 text-lg md:text-xl mb-10 font-light max-w-lg leading-relaxed">
+            <p class="text-white/80 text-lg md:text-xl mb-10 font-light max-w-lg leading-relaxed">
                 Morena's premier photography studio and high-end color lab. Elevating your stories into timeless visual masterpieces.
             </p>
             <div class="flex flex-wrap gap-4">
-                <a href="#contact" class="bg-primary text-on-primary px-8 py-4 rounded-lg font-headline font-bold text-base shadow-xl shadow-primary/30 hover:bg-primary-container transition-all text-center">
-                    Book a Session
-                </a>
-                <a href="#gallery" class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-lg font-headline font-bold text-base hover:bg-white/20 transition-all text-center">
-                    View Portfolio
-                </a>
+                <a href="#contact" class="bg-[#005dac] text-white px-8 py-4 rounded-lg font-bold shadow-xl shadow-primary/30 hover:bg-primary/80 transition-all">Book a Session</a>
+                <a href="#gallery" class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-lg font-bold hover:bg-white/20 transition-all">View Portfolio</a>
             </div>
         </div>
     </div>
 </header>
 
-<section id="services" class="py-24 bg-surface-container-low"> <div class="max-w-7xl mx-auto px-8">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div class="max-w-xl">
-                <h2 class="text-primary font-headline font-extrabold text-4xl mb-4">Our Creative Expertise</h2>
-                <p class="text-on-surface-variant text-lg">From intimate portraits to large-scale commercial campaigns, we bring precision and passion to every frame.</p>
-            </div>
+<section id="services" class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="mb-16" data-aos="fade-up">
+            <h2 class="text-[#005dac] font-headline font-extrabold text-4xl mb-4">Our Creative Expertise</h2>
+            <div class="w-20 h-1 bg-[#005dac] rounded-full"></div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="group relative overflow-hidden rounded-xl bg-surface-container-lowest p-8 md:col-span-2 flex flex-col md:flex-row gap-8 transition-all hover:shadow-xl">
-                <div class="md:w-1/2">
-                    <span class="material-symbols-outlined text-primary text-4xl mb-6 block">favorite</span>
-                    <h3 class="text-2xl font-headline font-bold mb-3">Wedding Photography</h3>
-                    <p class="text-on-surface-variant leading-relaxed">Cinematic storytelling of your most precious day. We capture the emotions, the details, and the heritage of your celebration.</p>
-                </div>
-                <div class="md:w-1/2 rounded-lg overflow-hidden h-48 md:h-auto">
-                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTCPHl8P7npAJCR54nwxN_1GWZxr1EIturyF7a9FkiUWWUEJ7Kuz8fns2GOy0Yd45zH-_n1R6FGRRCgsRMZEW55IJqGJNMnLeEqTjtYWKBJbcKbkPxI6BybjAWsjgJzoIQaQFK4wnok9AbQVTahpkM7Ad7krAd4ypx2z4MJH1fY2_G8Qx4I0b_Z2fvL2b5E58uw0nLz9XgTIK_xpREWNHKeGp144vc9M16XXw41ITX3Wtbts8muCD33ejg9E1ksC8glI26PlKJMMo"/>
-                </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-100" data-aos="fade-up" data-aos-delay="100">
+                <span class="material-symbols-outlined text-[#005dac] text-4xl mb-6">favorite</span>
+                <h3 class="text-2xl font-bold mb-3">Wedding Photography</h3>
+                <p class="text-slate-500 leading-relaxed">Cinematic storytelling of your most precious day. We capture the heritage of your celebration.</p>
             </div>
-            <div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col transition-all hover:shadow-xl">
-                <span class="material-symbols-outlined text-primary text-4xl mb-6 block">face</span>
-                <h3 class="text-2xl font-headline font-bold mb-3">Portrait Studio</h3>
-                <p class="text-on-surface-variant leading-relaxed">Professional studio lighting and expert direction for individual, family, and corporate headshots.</p>
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-100" data-aos="fade-up" data-aos-delay="200">
+                <span class="material-symbols-outlined text-[#005dac] text-4xl mb-6">face</span>
+                <h3 class="text-2xl font-bold mb-3">Portrait Studio</h3>
+                <p class="text-slate-500 leading-relaxed">Professional studio lighting and expert direction for individual and family headshots.</p>
             </div>
-            <div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col transition-all hover:shadow-xl">
-                <span class="material-symbols-outlined text-primary text-4xl mb-6 block">shopping_bag</span>
-                <h3 class="text-2xl font-headline font-bold mb-3">Product Photography</h3>
-                <p class="text-on-surface-variant leading-relaxed">High-definition imagery designed to make your products stand out in the marketplace.</p>
-            </div>
-            <div class="group relative overflow-hidden rounded-xl bg-surface-container-lowest p-8 md:col-span-2 flex flex-col md:flex-row-reverse gap-8 transition-all hover:shadow-xl">
-                <div class="md:w-1/2">
-                    <span class="material-symbols-outlined text-primary text-4xl mb-6 block">campaign</span>
-                    <h3 class="text-2xl font-headline font-bold mb-3">Commercial & Events</h3>
-                    <p class="text-on-surface-variant leading-relaxed">Comprehensive coverage for corporate events, brand activations, and large-scale industrial projects.</p>
-                </div>
-                <div class="md:w-1/2 rounded-lg overflow-hidden h-48 md:h-auto">
-                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw5rvTyfxHYpJqfaL92H_w99LVx2cUE5ZBESzU5LrssPeIjFpfoTcdPMi1OMOciR8SO6LDdz8dG78cR_p16U1bTeZThaCJI1YhvH-pKXFhSkMNzVk277zjB1Yv0USB3Rz4heLRea8d9giixel6tRZUSN-vNOT7fJslcpUY8xqzMK6CeWbNaKYLKtfnsx-lBTNwK3fzWxRwfW3newpkYuTj7pFO3gfdDPtqEKqXaKysmkOwq5wMNDPgWqmYR5pzOOzSMdsnOSlMhF4"/>
-                </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-100" data-aos="fade-up" data-aos-delay="300">
+                <span class="material-symbols-outlined text-[#005dac] text-4xl mb-6">auto_fix_high</span>
+                <h3 class="text-2xl font-bold mb-3">Digital Restoration</h3>
+                <p class="text-slate-500 leading-relaxed">Breathing new life into vintage photos. We remove scratches and restore colors with precision.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section id="gallery" class="py-24 bg-surface-container-low overflow-hidden"> <div class="max-w-7xl mx-auto px-8 mb-16">
-        <h2 class="text-primary font-headline font-extrabold text-4xl text-center mb-4">Our Gallery</h2>
-        <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+<section id="gallery" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-8 mb-16 text-center" data-aos="zoom-in">
+        <h2 class="text-[#005dac] font-headline font-extrabold text-4xl mb-4">Our Gallery</h2>
+        <div class="w-24 h-1 bg-[#005dac] mx-auto rounded-full"></div>
     </div>
-    <div class="max-w-[1400px] mx-auto px-4">
+    <div class="max-w-[1400px] mx-auto px-4" data-aos="fade-up">
         <div class="masonry-grid">
-            <div class="masonry-item-tall rounded-xl overflow-hidden group">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCbQ29q6upeDRbTYIa2l6s_2UTESs6rStVFa6xEFEo-AukET3bH_3qgvTlzNA3S2Z-ncbO5LXdyFqdWc4H_seiYh0UsNJsJA2fsV0Iso6YdIcu-VvCIPFw4b3JagJhidMIQrKg_aYJejbBtCuTRd8ElIqSUsUBz2v2qaG3JyfoRNSaaEZQ-_UEjPe4dxYPedasaInG_57WzFCX5t2j1BWt2u-rdCCeNNh6RJMoSdw-aL5lLA-MGxbD0U_Ge0GUMo1768mSKrrtbV0"/>
+            <div class="masonry-item-tall rounded-2xl overflow-hidden group">
+                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCbQ29q6upeDRbTYIa2l6s_2UTESs6rStVFa6xEFEo-AukET3bH_3qgvTlzNA3S2Z-ncbO5LXdyFqdWc4H_seiYh0UsNJsJA2fsV0Iso6YdIcu-VvCIPFw4b3JagJhidMIQrKg_aYJejbBtCuTRd8ElIqSUsUBz2v2qaG3JyfoRNSaaEZQ-_UEjPe4dxYPedasaInG_57WzFCX5t2j1BWt2u-rdCCeNNh6RJMoSdw-aL5lLA-MGxbD0U_Ge0GUMo1768mSKrrtbV0"/>
             </div>
-            <div class="rounded-xl overflow-hidden group">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZAmxWHgguczCz5eC51Q4UUPjr7TiO4IcBy1nwZUSqLoaKbU3FrW4LaDGqo-CNwo7wy40dS2PASdJK-ewGtggDl3WOcPYA6Pvw3RpASsNjQX3CD30XCqVe7-aiADTRIblP21jKO49qlwzvolet1G7hXkCz7vYt5PUShQ5KmdM_bWYWaA9oUcGuwgVwz1xn0MDsTG1ezE7TwUjT7Zwbbfqhr2ehnvy4xhQABKivy2v1IUS4IrgG1pnVL0dr2bDqLF4DOTZUP9SYrSY"/>
+            <div class="rounded-2xl overflow-hidden group">
+                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZAmxWHgguczCz5eC51Q4UUPjr7TiO4IcBy1nwZUSqLoaKbU3FrW4LaDGqo-CNwo7wy40dS2PASdJK-ewGtggDl3WOcPYA6Pvw3RpASsNjQX3CD30XCqVe7-aiADTRIblP21jKO49qlwzvolet1G7hXkCz7vYt5PUShQ5KmdM_bWYWaA9oUcGuwgVwz1xn0MDsTG1ezE7TwUjT7Zwbbfqhr2ehnvy4xhQABKivy2v1IUS4IrgG1pnVL0dr2bDqLF4DOTZUP9SYrSY"/>
             </div>
-            <div class="masonry-item-wide rounded-xl overflow-hidden group">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc6Djt3Zo_Y1TNh4mfdNfI7dVNS56nzYHAAiN88bc0OvXGrOo7RUTnFVsTE0h0LJJjXbvrkMhHrCSozSdNg2LVH1AvrRz6FqK7u1XuhKX4q-KkfabI4-AXf7PNwqG0cQakMBUz9lyvjqmCZ71C_-4o-ovSHLd2DfIm2o4y3vVd0ECOwgyk_xhqj0keAOe8jWc-A8f4_K1tRengeMFSxQ6ekiisVQe-7d2_5a_-81QWLTGHi27FA4guXz3ztXXB6cP29G3eF09PlEg"/>
+            <div class="masonry-item-wide rounded-2xl overflow-hidden group">
+                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc6Djt3Zo_Y1TNh4mfdNfI7dVNS56nzYHAAiN88bc0OvXGrOo7RUTnFVsTE0h0LJJjXbvrkMhHrCSozSdNg2LVH1AvrRz6FqK7u1XuhKX4q-KkfabI4-AXf7PNwqG0cQakMBUz9lyvjqmCZ71C_-4o-ovSHLd2DfIm2o4y3vVd0ECOwgyk_xhqj0keAOe8jWc-A8f4_K1tRengeMFSxQ6ekiisVQe-7d2_5a_-81QWLTGHi27FA4guXz3ztXXB6cP29G3eF09PlEg"/>
             </div>
-            <div class="rounded-xl overflow-hidden group">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAitCcGZ-kD5wFCZkYh77LxRQ4nVhC2KF8Hgw1Ie9Ln_6uu4yDqqiK5stABnDcGgk457vCgSyDZka8gCCasY2zQTZ9OMDNu26gf7FsoAcg4QMAyDSNWtc1GuKF9nsnUVPyfyZNjjQEldPCi-A_9fFTGTwHp5tGDPvP6UIHk1fNOv08-k4djLW5c9vTl4-fPPRUiwz_VDIgtoXH6HyARv2AjioNxM7ZybPMZeIdsLdhw2Zpdq0zbK8bNXsUi9Oh7hcIQFJMT5sTF4Mk"/>
+            <div class="rounded-2xl overflow-hidden group">
+                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAitCcGZ-kD5wFCZkYh77LxRQ4nVhC2KF8Hgw1Ie9Ln_6uu4yDqqiK5stABnDcGgk457vCgSyDZka8gCCasY2zQTZ9OMDNu26gf7FsoAcg4QMAyDSNWtc1GuKF9nsnUVPyfyZNjjQEldPCi-A_9fFTGTwHp5tGDPvP6UIHk1fNOv08-k4djLW5c9vTl4-fPPRUiwz_VDIgtoXH6HyARv2AjioNxM7ZybPMZeIdsLdhw2Zpdq0zbK8bNXsUi9Oh7hcIQFJMT5sTF4Mk"/>
             </div>
-            <div class="masonry-item-tall rounded-xl overflow-hidden group">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACxgJugoseWW7Nj8F8CiDB5dmEqwUIe2d_LUrF82magw5Bn6ONSltEMu1A-cWIW1LijB5mTG-yvrdMfpHS6pd0_b58Uy8HCL-myFGgZlT1cKC--a1OWbogV88xrq2ytak7iZhwHk3aWVuvgf3Mxv-5fPeonduXNv2m7_e5bCJH6JjdV_IS3aiKkVx4caSpstSzsD_8kqCU-P2i0c-ib4w7TxoB3geMPYXx00Tj33TmWoMem9b9qZm-zXetdlg5E2RVuSQYt0Bp2Z0"/>
+            <div class="masonry-item-tall rounded-2xl overflow-hidden group">
+                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACxgJugoseWW7Nj8F8CiDB5dmEqwUIe2d_LUrF82magw5Bn6ONSltEMu1A-cWIW1LijB5mTG-yvrdMfpHS6pd0_b58Uy8HCL-myFGgZlT1cKC--a1OWbogV88xrq2ytak7iZhwHk3aWVuvgf3Mxv-5fPeonduXNv2m7_e5bCJH6JjdV_IS3aiKkVx4caSpstSzsD_8kqCU-P2i0c-ib4w7TxoB3geMPYXx00Tj33TmWoMem9b9qZm-zXetdlg5E2RVuSQYt0Bp2Z0"/>
             </div>
-            <div class="rounded-xl overflow-hidden group">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHQinIIoyqC0WcgdZ56_o78b58srZZxxE9vPRv1YazPJ3OnX5SBRFT9DdbKHXZehwzaZlm-cT2Q1AbsnYZqqmi2NWbcTYMOVX2S27UlHK7TQz2bSEqaCtfU4qJUhx7CjP0bUEPIL7MfOonHp6M8fE67g8OH1QxBw7GxnZtahNloi-OlueBUlqsGWjN_WrNZi79n1x4J5AUcIX3h1PPTLsOEDYBpKrfK-6JqXDzXkXxREbFadh8EQ94vFRwteqYLhHLKerrVa-x5Lk"/>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="about" class="py-24 bg-white"> <div class="max-w-7xl mx-auto px-8">
-        <div class="bg-surface-container-lowest rounded-3xl p-12 shadow-sm border border-outline-variant/10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-primary font-headline font-extrabold text-4xl mb-6">Since 2004, Creating the Visual Pulse of Morena.</h2>
-                    <p class="text-on-surface-variant text-lg leading-relaxed mb-8">
-                            Sagun Color Lab & Studio began with a simple mission: to provide the highest quality visual services in Morena. Over two decades, we have evolved from a traditional color lab into a comprehensive digital studio that serves families, businesses, and artists alike.
-                    </p>
-                    <div class="grid grid-cols-2 gap-8">
-                        <div>
-                            <p class="text-4xl font-headline font-extrabold text-primary mb-1">20+</p>
-                            <p class="text-sm text-slate-500 uppercase tracking-widest font-semibold">Years Experience</p>
-                        </div>
-                        <div>
-                            <p class="text-4xl font-headline font-extrabold text-primary mb-1">10k+</p>
-                            <p class="text-sm text-slate-500 uppercase tracking-widest font-semibold">Clients Served</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <img class="rounded-xl w-full h-64 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsI5PdnrbvzfuNmqmNbcIo6bH1v6oSd9h4wvPBQQO0-5yG7GnZMNAPpgm-GfwHmZfd-qb2DCE_99e2lUQEt8zFtDeyFg38xPUCWFtQE_cSDkhsTGkw-edUZ1QMjnIu5tDCpqof_nmOhIvUn-y9BOyfZom4nQXuRZpMmtq0c0JTEaRHimQ-WnKAGzEFqXExw2JbmH2oWBhbWONdZjqFR9p7vxKfDQzUG8HlFOUoRpF9k3m81O8Zcj5VTTs_-UDoCAM_NoaGPxElKoM"/>
-                    <img class="rounded-xl w-full h-64 object-cover mt-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXSpJ0G89kDPGM4mg0dlxr1clfeADDPVLZJglSB1h3u4AvqXJNHtkabGG7sUTltb21b1LJcTpDBVjXlv8iKv0V0-OG1LcfMouc2aTRhmTG7zSZWCarGi4EsQCubyvOGSGsAqfSAHJN2g3ZbxxewvzYU29D2ZV8RJ3TsBZuuhsYPSSxwI1Q2CpAmyAIC9sLrH6asEEe-X6Pd8HAyutPtCz3lFcUmExsGaOwv20JoBOunPcV96Y5oCyzrErkG2IcVDmPVNGmhQyTGxw"/>
-                </div>
+            <div class="rounded-2xl overflow-hidden group">
+                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHQinIIoyqC0WcgdZ56_o78b58srZZxxE9vPRv1YazPJ3OnX5SBRFT9DdbKHXZehwzaZlm-cT2Q1AbsnYZqqmi2NWbcTYMOVX2S27UlHK7TQz2bSEqaCtfU4qJUhx7CjP0bUEPIL7MfOonHp6M8fE67g8OH1QxBw7GxnZtahNloi-OlueBUlqsGWjN_WrNZi79n1x4J5AUcIX3h1PPTLsOEDYBpKrfK-6JqXDzXkXxREbFadh8EQ94vFRwteqYLhHLKerrVa-x5Lk"/>
             </div>
         </div>
     </div>
 </section>
 
-<section id="contact" class="py-24 bg-white"> <div class="max-w-7xl mx-auto px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <div>
-                <h2 class="text-primary font-headline font-extrabold text-4xl mb-8">Visit Our Studio</h2>
-                <div class="space-y-6">
-                    <div class="flex gap-4">
-                        <span class="material-symbols-outlined text-primary">location_on</span>
-                        <div>
-                            <p class="font-bold text-lg mb-1">Jiwaji Ganj, Morena</p>
-                            <p class="text-on-surface-variant">Madhya Pradesh, 476001</p>
-                        </div>
+<section id="about" class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="bg-white rounded-[3rem] p-12 shadow-xl border border-slate-100 flex flex-col lg:flex-row gap-16 items-center" data-aos="fade-up">
+            <div class="lg:w-1/2">
+                <h2 class="text-[#005dac] font-headline font-extrabold text-4xl mb-6">Since 2004, Creating the Visual Pulse of Morena.</h2>
+                <p class="text-slate-600 text-lg leading-relaxed mb-8">
+                    Sagun Color Lab & Studio began with a simple mission: to provide the highest quality visual services. We have evolved from a traditional lab into a comprehensive digital studio.
+                </p>
+                <div class="flex gap-12">
+                    <div>
+                        <p class="text-4xl font-extrabold text-[#005dac]">20+</p>
+                        <p class="text-xs uppercase tracking-widest text-slate-400 font-bold">Years Experience</p>
                     </div>
-                    <div class="flex gap-4">
-                        <span class="material-symbols-outlined text-primary">schedule</span>
-                        <div>
-                            <p class="font-bold text-lg mb-1">Operating Hours</p>
-                            <p class="text-on-surface-variant">10:00 AM - 08:00 PM (Monday - Sunday)</p>
-                        </div>
+                    <div>
+                        <p class="text-4xl font-extrabold text-[#005dac]">10k+</p>
+                        <p class="text-xs uppercase tracking-widest text-slate-400 font-bold">Happy Clients</p>
                     </div>
-                    <a href="tel:+910000000000" class="flex gap-4 hover:text-primary transition-colors">
-                        <span class="material-symbols-outlined text-primary">call</span>
-                        <div>
-                            <p class="font-bold text-lg mb-1">Contact Support</p>
-                            <p class="text-on-surface-variant">+91 (Morena Studio Line)</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="mt-12 p-8 bg-surface-container-low rounded-2xl">
-                    <h4 class="font-headline font-bold text-xl mb-4">Book Your Date</h4>
-                    <form class="space-y-4">
-                        <input required class="w-full bg-white border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary" placeholder="Your Name" type="text"/>
-                        <input required class="w-full bg-white border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary" placeholder="Email Address" type="email"/>
-                        <button type="submit" class="w-full bg-primary text-on-primary py-3 rounded-lg font-headline font-bold hover:brightness-110 transition-all">Inquire Now</button>
-                    </form>
                 </div>
             </div>
-            <div class="rounded-2xl overflow-hidden min-h-[400px] shadow-lg relative">
-                <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfIFUArvBW72Cl0FH_zmgqHoAZQu0_73AwwzNoJ8r8uZQIQVXjENLWMO_lrlIOjosUhtcqJS0Uk74_BHSXNJH8RTrXTdSlcKS1V3UDT0_AJU8RAdC9KxOrQljsm_jhyXRXbK9Vu_mfWfamt0QjnjnOXGjAKrG9xrSR0qktUZiH_ILYCp0pIcDMBRIosnKTbgb26snRAqGkwqJagLLdCa7AIGdu8__1TlXOkTZqHS1EcCVGo6iQjc9ieHLGlplavUWgFCpAc4Isieg"/>
-                <div class="absolute inset-0 bg-primary/10 flex items-center justify-center">
-                    <div class="bg-white p-6 rounded-xl shadow-2xl flex items-center gap-4">
-                        <div class="bg-primary p-3 rounded-full">
-                            <span class="material-symbols-outlined text-white">push_pin</span>
-                        </div>
-                        <div>
-                            <p class="font-bold">Sagun Color Lab</p>
-                            <p class="text-xs text-slate-400">Open until 8:00 PM</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="lg:w-1/2 grid grid-cols-2 gap-4">
+                <img class="rounded-2xl h-64 w-full object-cover shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsI5PdnrbvzfuNmqmNbcIo6bH1v6oSd9h4wvPBQQO0-5yG7GnZMNAPpgm-GfwHmZfd-qb2DCE_99e2lUQEt8zFtDeyFg38xPUCWFtQE_cSDkhsTGkw-edUZ1QMjnIu5tDCpqof_nmOhIvUn-y9BOyfZom4nQXuRZpMmtq0c0JTEaRHimQ-WnKAGzEFqXExw2JbmH2oWBhbWONdZjqFR9p7vxKfDQzUG8HlFOUoRpF9k3m81O8Zcj5VTTs_-UDoCAM_NoaGPxElKoM"/>
+                <img class="rounded-2xl h-64 w-full object-cover shadow-lg mt-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXSpJ0G89kDPGM4mg0dlxr1clfeADDPVLZJglSB1h3u4AvqXJNHtkabGG7sUTltb21b1LJcTpDBVjXlv8iKv0V0-OG1LcfMouc2aTRhmTG7zSZWCarGi4EsQCubyvOGSGsAqfSAHJN2g3ZbxxewvzYU29D2ZV8RJ3TsBZuuhsYPSSxwI1Q2CpAmyAIC9sLrH6asEEe-X6Pd8HAyutPtCz3lFcUmExsGaOwv20JoBOunPcV96Y5oCyzrErkG2IcVDmPVNGmhQyTGxw"/>
             </div>
         </div>
     </div>
 </section>
 
-<footer class="bg-slate-50 dark:bg-slate-950 w-full border-t border-slate-100 dark:border-slate-800">
-    <div class="flex flex-col md:flex-row justify-between items-center px-12 py-12 gap-6 w-full max-w-7xl mx-auto">
-        <div class="flex flex-col items-center md:items-start gap-2">
-            <span class="font-['Plus_Jakarta_Sans'] font-bold text-[#005dac] text-xl">Sagun Studio</span>
-            <p class="font-['Inter'] text-xs text-slate-500 max-w-xs text-center md:text-left">
-                © 2026 Sagun Color Lab & Studio. Morena's Premier Visual Curators.
-            </p>
+<section id="contact" class="py-24 bg-slate-900 text-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div data-aos="fade-right">
+            <h2 class="text-[#d4e3ff] font-headline font-extrabold text-4xl mb-8">Visit Our Studio</h2>
+            <div class="space-y-8">
+                <div class="flex gap-6">
+                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[#d4e3ff]">location_on</span>
+                    </div>
+                    <div>
+                        <p class="font-bold text-xl">Jiwaji Ganj, Morena</p>
+                        <p class="text-white/50">Madhya Pradesh, 476001</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[#d4e3ff]">call</span>
+                    </div>
+                    <div>
+                        <p class="font-bold text-xl">Call Us Directly</p>
+                        <p class="text-white/50">+91 (Morena Line)</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="flex flex-wrap justify-center gap-6">
-            <a class="font-['Inter'] text-xs text-slate-400 hover:text-slate-600 transition-all" href="#gallery">Portfolio</a>
-            <a class="font-['Inter'] text-xs text-slate-400 hover:text-slate-600 transition-all" href="#services">Services</a>
-            <a class="font-['Inter'] text-xs text-slate-400 hover:text-slate-600 transition-all" href="#contact">Location</a>
-        </div>
-        <div class="flex gap-4">
-            <a class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center hover:bg-primary hover:text-white transition-all opacity-80" href="https://instagram.com" target="_blank">
-                <span class="material-symbols-outlined text-[18px]">photo_camera</span>
-            </a>
-            <a class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center hover:bg-primary hover:text-white transition-all opacity-80" href="https://youtube.com" target="_blank">
-                <span class="material-symbols-outlined text-[18px]">movie</span>
-            </a>
+        <div class="bg-white/5 p-10 rounded-[2rem] backdrop-blur-xl border border-white/10 shadow-2xl" data-aos="zoom-in-left">
+            <h3 class="text-2xl font-bold mb-6">Send an Inquiry</h3>
+            <form class="space-y-4">
+                <input required class="w-full bg-white/5 border-white/10 rounded-xl p-4 text-white focus:ring-2 focus:ring-[#005dac] outline-none transition-all" placeholder="Your Full Name" type="text"/>
+                <input required class="w-full bg-white/5 border-white/10 rounded-xl p-4 text-white focus:ring-2 focus:ring-[#005dac] outline-none transition-all" placeholder="Mobile Number" type="tel"/>
+                <button class="w-full bg-[#005dac] text-white py-4 rounded-xl font-bold hover:scale-[1.02] active:scale-95 transition-all shadow-lg shadow-primary/20">Send Message</button>
+            </form>
         </div>
     </div>
+</section>
+
+<footer class="bg-white py-12 border-t border-slate-100 text-center">
+    <p class="text-slate-400 text-sm">© 2026 Sagun Color Lab & Studio. Morena's Premier Visual Curators.</p>
 </footer>
 
-<div class="fixed bottom-6 right-6 z-[60]">
-    <a href="#contact" class="bg-primary text-white flex items-center gap-3 px-6 py-4 rounded-full shadow-2xl hover:scale-105 transition-transform no-underline">
-        <span class="material-symbols-outlined">chat_bubble</span>
-        <span class="font-headline font-bold text-sm hidden sm:inline">Book a Session</span>
+<div class="fixed bottom-8 right-8 z-[100]">
+    <a href="https://wa.me/7772878122" target="_blank" class="bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform">
+        <span class="material-symbols-outlined text-3xl">chat</span>
     </a>
 </div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+<script>
+    // 1. Animation Initializer
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100
+    });
+
+    // 2. Typewriter Effect
+    var typed = new Typed('#typed-text', {
+        strings: ['Capturing Moments,', 'Creating Memories.'],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 2000,
+        loop: true,
+        cursorChar: '_'
+    });
+</script>
 
 </body>
 </html>
