@@ -1,211 +1,618 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Sagun Color Lab & Studio | Morena's Premier Visual Curators</title>
+    <title>Sagun Casein | Industrial Grade Excellence</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom Scroll Progress Bar */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: #ffa95b; /* tertiary-container color */
+            z-index: 100;
+            width: 0%;
+            transition: width 0.1s ease-out;
+        }
+        /* Card Lift Effect */
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        /* Input Glow */
+        .interactive-input:focus {
+            box-shadow: 0 0 0 4px rgba(13, 71, 161, 0.15);
+        }
+    </style>
+
     <script id="tailwind-config">
-          tailwind.config = {
+        tailwind.config = {
             darkMode: "class",
             theme: {
-              extend: {
-                colors: {
-                  "primary": "#005dac",
-                  "primary-fixed": "#d4e3ff",
-                  "surface-container-low": "#f3f3f3",
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed-variant": "#6d3a00",
+                        "surface-container": "#edeeef",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#b4cad6",
+                        "on-background": "#191c1d",
+                        "surface-container-high": "#e7e8e9",
+                        "tertiary": "#532b00",
+                        "on-surface": "#191c1d",
+                        "error-container": "#ffdad6",
+                        "outline": "#737783",
+                        "surface-dim": "#d9dadb",
+                        "on-secondary-fixed-variant": "#354a53",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#ffa95b",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#434652",
+                        "surface-container-highest": "#e1e3e4",
+                        "outline-variant": "#c3c6d4",
+                        "primary-fixed": "#d9e2ff",
+                        "secondary": "#4c616c",
+                        "secondary-container": "#cfe6f2",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#743e00",
+                        "primary-fixed-dim": "#b0c6ff",
+                        "on-primary-fixed-variant": "#00429c",
+                        "inverse-primary": "#b0c6ff",
+                        "secondary-fixed": "#cfe6f2",
+                        "surface-variant": "#e1e3e4",
+                        "inverse-surface": "#2e3132",
+                        "surface": "#f8f9fa",
+                        "on-primary-fixed": "#001945",
+                        "primary-container": "#0d47a1",
+                        "surface-tint": "#2b5bb5",
+                        "on-tertiary-fixed": "#2e1500",
+                        "on-secondary-container": "#526772",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#ffdcc2",
+                        "on-primary": "#ffffff",
+                        "background": "#f8f9fa",
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary-container": "#a1bbff",
+                        "on-secondary-fixed": "#071e27",
+                        "surface-bright": "#f8f9fa",
+                        "tertiary-fixed-dim": "#ffb77a",
+                        "primary": "#003178"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
                 },
-                fontFamily: {
-                  "headline": ["Plus Jakarta Sans"],
-                  "body": ["Inter"],
-                },
-              },
             },
-          }
-    </script>
-    <style>
-        html { scroll-behavior: smooth; overflow-x: hidden; }
-        body { overflow-x: hidden; background-color: #f9f9f9; }
-        
-        /* Typing cursor style */
-        .typed-cursor { color: #d4e3ff; font-size: 0.9em; }
-
-        /* Masonry Grid Logic */
-        .masonry-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            grid-auto-rows: 200px;
-            gap: 1.5rem;
         }
-        .masonry-item-tall { grid-row: span 2; }
-        .masonry-item-wide { grid-column: span 2; }
-    </style>
+    </script>
 </head>
-<body class="text-[#1a1c1c] font-body">
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
 
-<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-lg shadow-sm">
-    <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-        <div class="text-xl font-bold tracking-tighter text-[#005dac] uppercase font-headline">Sagun Studio</div>
-        <div class="hidden md:flex items-center gap-8 font-medium text-sm">
-            <a class="hover:text-[#005dac] transition-colors" href="#gallery">Portfolio</a>
-            <a class="hover:text-[#005dac] transition-colors" href="#services">Services</a>
-            <a class="hover:text-[#005dac] transition-colors" href="#about">About</a>
-            <a class="hover:text-[#005dac] transition-colors" href="#contact">Contact</a>
-        </div>
-        <a href="#contact" class="bg-[#005dac] text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:scale-105 transition-transform shadow-lg shadow-primary/20">Book Session</a>
-    </div>
-</nav>
+<div id="scroll-progress"></div>
 
-<header class="relative min-h-screen flex items-center pt-20">
-    <div class="absolute inset-0 z-0">
-        <img class="w-full h-full object-cover brightness-[0.6]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9o3FIrqrQqbhT2VZbPNs3cfDx6IcADIYW6TeabB2lHI4QFvDoumhf-tuPZhu-3vuL_HO0sJ6iFXpKPC0PN3YbAAIOHWP-T_-CV4V2L3qqJ4BYhRtN8ksTVBhmFSGa2OqBjxfC9ZRYwQEwApKDiT8i7SC7rh99XUHPxYQsgtELu214P7BLOQB-ekoSICKh6u6Ezul5D9pdS8pzBtV-WWjVmzWJaj0vGqxSQoKuP883UmmTCoKwqB5musle9CSsJwaD1ynM9qLbYJo"/>
-        <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent"></div>
-    </div>
-    <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
-        <div class="max-w-3xl" data-aos="fade-right" data-aos-duration="1200">
-            <span class="inline-block text-primary-fixed font-headline font-bold tracking-[0.2em] uppercase text-xs mb-4">Established 2004</span>
-            <h1 class="text-white font-headline font-extrabold text-5xl md:text-7xl leading-tight mb-6 min-h-[160px]">
-                <span id="typed-text"></span>
-            </h1>
-            <p class="text-white/80 text-lg md:text-xl mb-10 font-light max-w-lg leading-relaxed">
-                Morena's premier photography studio and high-end color lab. Elevating your stories into timeless visual masterpieces.
-            </p>
-            <div class="flex flex-wrap gap-4">
-                <a href="#contact" class="bg-[#005dac] text-white px-8 py-4 rounded-lg font-bold shadow-xl shadow-primary/30 hover:bg-primary/80 transition-all">Book a Session</a>
-                <a href="#gallery" class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-lg font-bold hover:bg-white/20 transition-all">View Portfolio</a>
-            </div>
+<header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-sm">
+    <nav class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+        <div class="text-2xl font-extrabold tracking-tighter text-blue-900 font-['Manrope']">
+            Sagun Casein
         </div>
+        
+        <div class="hidden md:flex items-center space-x-8">
+            <a class="text-blue-700 border-b-2 border-blue-700 pb-1 font-['Manrope'] font-bold tracking-tight" href="#about">About Us</a>
+            <a class="text-slate-600 hover:text-blue-900 transition-colors font-['Manrope'] font-bold tracking-tight" href="#products">Products</a>
+            <a class="text-slate-600 hover:text-blue-900 transition-colors font-['Manrope'] font-bold tracking-tight" href="#industries">Applications</a>
+            <a class="text-slate-600 hover:text-blue-900 transition-colors font-['Manrope'] font-bold tracking-tight" href="#testimonial">Testimonials</a>
+            <a class="text-slate-600 hover:text-blue-900 transition-colors font-['Manrope'] font-bold tracking-tight" href="#contact">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <a href="#contact" class="bg-primary hover:bg-primary-container text-on-primary px-6 py-2.5 rounded-lg font-bold transition-all active:scale-95 shadow-md">
+                Get a Quote
+            </a>
+            
+            <button id="mobile-menu-btn" class="md:hidden text-primary focus:outline-none flex items-center justify-center">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-outline-variant/20 flex-col px-8 py-6 space-y-4 shadow-lg">
+        <a class="text-blue-700 font-['Manrope'] font-bold tracking-tight block w-full mobile-link" href="#about">About Us</a>
+        <a class="text-slate-600 hover:text-blue-900 transition-colors font-['Manrope'] font-bold tracking-tight block w-full mobile-link" href="#products">Products</a>
+        <a class="text-slate-600 hover:text-blue-900 transition-colors font-['Manrope'] font-bold tracking-tight block w-full mobile-link" href="#industries">Applications</a>
+        <a class="text-slate-600 hover:text-blue-900 transition-colors font-['Manrope'] font-bold tracking-tight block w-full mobile-link" href="#testimonial">Testimonials</a>
+        <a class="text-slate-600 hover:text-blue-900 transition-colors font-['Manrope'] font-bold tracking-tight block w-full mobile-link" href="#contact">Contact</a>
     </div>
 </header>
 
-<section id="services" class="py-24 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-8">
-        <div class="mb-16" data-aos="fade-up">
-            <h2 class="text-[#005dac] font-headline font-extrabold text-4xl mb-4">Our Creative Expertise</h2>
-            <div class="w-20 h-1 bg-[#005dac] rounded-full"></div>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-100" data-aos="fade-up" data-aos-delay="100">
-                <span class="material-symbols-outlined text-[#005dac] text-4xl mb-6">favorite</span>
-                <h3 class="text-2xl font-bold mb-3">Wedding Photography</h3>
-                <p class="text-slate-500 leading-relaxed">Cinematic storytelling of your most precious day. We capture the heritage of your celebration.</p>
-            </div>
-            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-100" data-aos="fade-up" data-aos-delay="200">
-                <span class="material-symbols-outlined text-[#005dac] text-4xl mb-6">face</span>
-                <h3 class="text-2xl font-bold mb-3">Portrait Studio</h3>
-                <p class="text-slate-500 leading-relaxed">Professional studio lighting and expert direction for individual and family headshots.</p>
-            </div>
-            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-100" data-aos="fade-up" data-aos-delay="300">
-                <span class="material-symbols-outlined text-[#005dac] text-4xl mb-6">auto_fix_high</span>
-                <h3 class="text-2xl font-bold mb-3">Digital Restoration</h3>
-                <p class="text-slate-500 leading-relaxed">Breathing new life into vintage photos. We remove scratches and restore colors with precision.</p>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section id="gallery" class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-8 mb-16 text-center" data-aos="zoom-in">
-        <h2 class="text-[#005dac] font-headline font-extrabold text-4xl mb-4">Our Gallery</h2>
-        <div class="w-24 h-1 bg-[#005dac] mx-auto rounded-full"></div>
-    </div>
-    <div class="max-w-[1400px] mx-auto px-4" data-aos="fade-up">
-        <div class="masonry-grid">
-            <div class="masonry-item-tall rounded-2xl overflow-hidden group">
-                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCbQ29q6upeDRbTYIa2l6s_2UTESs6rStVFa6xEFEo-AukET3bH_3qgvTlzNA3S2Z-ncbO5LXdyFqdWc4H_seiYh0UsNJsJA2fsV0Iso6YdIcu-VvCIPFw4b3JagJhidMIQrKg_aYJejbBtCuTRd8ElIqSUsUBz2v2qaG3JyfoRNSaaEZQ-_UEjPe4dxYPedasaInG_57WzFCX5t2j1BWt2u-rdCCeNNh6RJMoSdw-aL5lLA-MGxbD0U_Ge0GUMo1768mSKrrtbV0"/>
-            </div>
-            <div class="rounded-2xl overflow-hidden group">
-                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZAmxWHgguczCz5eC51Q4UUPjr7TiO4IcBy1nwZUSqLoaKbU3FrW4LaDGqo-CNwo7wy40dS2PASdJK-ewGtggDl3WOcPYA6Pvw3RpASsNjQX3CD30XCqVe7-aiADTRIblP21jKO49qlwzvolet1G7hXkCz7vYt5PUShQ5KmdM_bWYWaA9oUcGuwgVwz1xn0MDsTG1ezE7TwUjT7Zwbbfqhr2ehnvy4xhQABKivy2v1IUS4IrgG1pnVL0dr2bDqLF4DOTZUP9SYrSY"/>
-            </div>
-            <div class="masonry-item-wide rounded-2xl overflow-hidden group">
-                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc6Djt3Zo_Y1TNh4mfdNfI7dVNS56nzYHAAiN88bc0OvXGrOo7RUTnFVsTE0h0LJJjXbvrkMhHrCSozSdNg2LVH1AvrRz6FqK7u1XuhKX4q-KkfabI4-AXf7PNwqG0cQakMBUz9lyvjqmCZ71C_-4o-ovSHLd2DfIm2o4y3vVd0ECOwgyk_xhqj0keAOe8jWc-A8f4_K1tRengeMFSxQ6ekiisVQe-7d2_5a_-81QWLTGHi27FA4guXz3ztXXB6cP29G3eF09PlEg"/>
-            </div>
-            <div class="rounded-2xl overflow-hidden group">
-                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAitCcGZ-kD5wFCZkYh77LxRQ4nVhC2KF8Hgw1Ie9Ln_6uu4yDqqiK5stABnDcGgk457vCgSyDZka8gCCasY2zQTZ9OMDNu26gf7FsoAcg4QMAyDSNWtc1GuKF9nsnUVPyfyZNjjQEldPCi-A_9fFTGTwHp5tGDPvP6UIHk1fNOv08-k4djLW5c9vTl4-fPPRUiwz_VDIgtoXH6HyARv2AjioNxM7ZybPMZeIdsLdhw2Zpdq0zbK8bNXsUi9Oh7hcIQFJMT5sTF4Mk"/>
-            </div>
-            <div class="masonry-item-tall rounded-2xl overflow-hidden group">
-                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACxgJugoseWW7Nj8F8CiDB5dmEqwUIe2d_LUrF82magw5Bn6ONSltEMu1A-cWIW1LijB5mTG-yvrdMfpHS6pd0_b58Uy8HCL-myFGgZlT1cKC--a1OWbogV88xrq2ytak7iZhwHk3aWVuvgf3Mxv-5fPeonduXNv2m7_e5bCJH6JjdV_IS3aiKkVx4caSpstSzsD_8kqCU-P2i0c-ib4w7TxoB3geMPYXx00Tj33TmWoMem9b9qZm-zXetdlg5E2RVuSQYt0Bp2Z0"/>
-            </div>
-            <div class="rounded-2xl overflow-hidden group">
-                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHQinIIoyqC0WcgdZ56_o78b58srZZxxE9vPRv1YazPJ3OnX5SBRFT9DdbKHXZehwzaZlm-cT2Q1AbsnYZqqmi2NWbcTYMOVX2S27UlHK7TQz2bSEqaCtfU4qJUhx7CjP0bUEPIL7MfOonHp6M8fE67g8OH1QxBw7GxnZtahNloi-OlueBUlqsGWjN_WrNZi79n1x4J5AUcIX3h1PPTLsOEDYBpKrfK-6JqXDzXkXxREbFadh8EQ94vFRwteqYLhHLKerrVa-x5Lk"/>
-            </div>
+<main>
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0 scale-105 transition-transform duration-1000 hover:scale-100">
+            <img alt="Industrial Facility" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbSlx37UMdwmELC7K99CmnGnkx7dUPeF_SOBosQz9kyX0h_NFtUE3TC9Z-WNSl4x0_crvGV_N-al9-v2CumVvHNF6P7Bpw2I7hBMpPta99KINKIaRwszNPoraqaBHNwqEoSBQStkrlZihfMuuCsANhhdvbIRupZz7abB7EocKB1Urnr8Bfr3WcNlM55nuYCsrHpVfCoZ_cFNUNZY3vtw8J6igNEHyl0aOxF-dyH7xxI7beO55m_BzmL65G9oYQGeyyZZDmi-DgXg"/>
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/50 to-transparent"></div>
         </div>
-    </div>
-</section>
-
-<section id="about" class="py-24 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-8">
-        <div class="bg-white rounded-[3rem] p-12 shadow-xl border border-slate-100 flex flex-col lg:flex-row gap-16 items-center" data-aos="fade-up">
-            <div class="lg:w-1/2">
-                <h2 class="text-[#005dac] font-headline font-extrabold text-4xl mb-6">Since 2004, Creating the Visual Pulse of Morena.</h2>
-                <p class="text-slate-600 text-lg leading-relaxed mb-8">
-                    Sagun Color Lab & Studio began with a simple mission: to provide the highest quality visual services. We have evolved from a traditional lab into a comprehensive digital studio.
+        <div class="container mx-auto px-8 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <span class="inline-block px-4 py-1.5 bg-tertiary-container text-on-tertiary-container text-xs font-bold tracking-widest uppercase rounded-full mb-6">
+                    Global Industrial Leader
+                </span>
+                <h1 class="text-5xl md:text-7xl font-headline font-extrabold text-white leading-tight tracking-tighter mb-6">
+                    Sagun Casein: India's Leading Manufacturer of <span class="text-tertiary-fixed-dim">Industrial Grade Casein</span>
+                </h1>
+                <p class="text-xl text-blue-100/90 font-body mb-10 leading-relaxed max-w-lg">
+                    Excellence in production, precision in quality, and a global leader in high-grade casein products.
                 </p>
-                <div class="flex gap-12">
-                    <div>
-                        <p class="text-4xl font-extrabold text-[#005dac]">20+</p>
-                        <p class="text-xs uppercase tracking-widest text-slate-400 font-bold">Years Experience</p>
-                    </div>
-                    <div>
-                        <p class="text-4xl font-extrabold text-[#005dac]">10k+</p>
-                        <p class="text-xs uppercase tracking-widest text-slate-400 font-bold">Happy Clients</p>
-                    </div>
+                <div class="flex flex-wrap gap-4">
+                    <a class="bg-white text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-primary-fixed transition-all shadow-xl active:scale-95" href="#products">View Products</a>
+                    <a class="border-2 border-white/30 backdrop-blur-md text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-all active:scale-95" href="#contact">Get a Quote</a>
                 </div>
             </div>
-            <div class="lg:w-1/2 grid grid-cols-2 gap-4">
-                <img class="rounded-2xl h-64 w-full object-cover shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsI5PdnrbvzfuNmqmNbcIo6bH1v6oSd9h4wvPBQQO0-5yG7GnZMNAPpgm-GfwHmZfd-qb2DCE_99e2lUQEt8zFtDeyFg38xPUCWFtQE_cSDkhsTGkw-edUZ1QMjnIu5tDCpqof_nmOhIvUn-y9BOyfZom4nQXuRZpMmtq0c0JTEaRHimQ-WnKAGzEFqXExw2JbmH2oWBhbWONdZjqFR9p7vxKfDQzUG8HlFOUoRpF9k3m81O8Zcj5VTTs_-UDoCAM_NoaGPxElKoM"/>
-                <img class="rounded-2xl h-64 w-full object-cover shadow-lg mt-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXSpJ0G89kDPGM4mg0dlxr1clfeADDPVLZJglSB1h3u4AvqXJNHtkabGG7sUTltb21b1LJcTpDBVjXlv8iKv0V0-OG1LcfMouc2aTRhmTG7zSZWCarGi4EsQCubyvOGSGsAqfSAHJN2g3ZbxxewvzYU29D2ZV8RJ3TsBZuuhsYPSSxwI1Q2CpAmyAIC9sLrH6asEEe-X6Pd8HAyutPtCz3lFcUmExsGaOwv20JoBOunPcV96Y5oCyzrErkG2IcVDmPVNGmhQyTGxw"/>
+        </div>
+
+        <div class="absolute bottom-0 left-0 w-full bg-surface-container-low/80 backdrop-blur-xl py-8 border-t border-outline-variant/20 hidden md:block">
+        <div class="max-w-screen-2xl mx-auto px-8 flex justify-between items-center text-primary">
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-4xl">precision_manufacturing</span>
+                <div>
+                    <p class="font-bold text-2xl font-headline">
+                        <span class="counter" data-target="1000">0</span>MT+
+                    </p>
+                    <p class="text-sm text-on-surface-variant font-label">Production Capacity</p>
+                </div>
+            </div>
+    
+            <div class="w-px h-12 bg-outline-variant/30"></div>
+    
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-4xl">public</span>
+                <div>
+                    <p class="font-bold text-2xl font-headline">
+                        <span class="counter" data-target="125">0</span>+
+                    </p>
+                    <p class="text-sm text-on-surface-variant font-label">Clients Globally</p>
+                </div>
+            </div>
+    
+            <div class="w-px h-12 bg-outline-variant/30"></div>
+    
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-4xl">verified</span>
+                <div>
+                    <p class="font-bold text-2xl font-headline">ISO 9001</p>
+                    <p class="text-sm text-on-surface-variant font-label">Certified Quality</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </section>
+
+    <section class="py-32 bg-surface" id="about">
+    <div class="max-w-screen-2xl mx-auto px-8">
+        <div class="grid lg:grid-cols-12 gap-16 items-start">
+            
+            <div class="lg:col-span-5" data-aos="fade-up">
+                <h2 class="text-primary text-sm font-bold tracking-widest uppercase mb-4">
+                    Since 1999 | Backed by Dairy Expertise Since 1935
+                </h2>
+                <h3 class="text-4xl md:text-5xl font-headline font-bold text-on-surface leading-tight mb-8">
+                    Built on Legacy. <br/>
+                    <span class="text-primary-container">Driven by Industrial Excellence.</span>
+                </h3>
+                <p class="text-lg text-on-surface-variant leading-relaxed mb-6">
+                    SAGUN is a leading manufacturer of Industrial and Edible Grade Acid Casein in India, known for consistent quality and reliable supply. 
+                </p>
+                <p class="text-lg text-on-surface-variant leading-relaxed mb-8">
+                    With roots in dairy since 1935 and a focused expansion into casein manufacturing in 1999, we have played a key role in transforming Morena into the <strong><span class="text-primary-container">“Casein Capital of India.”</span></strong> Today, SAGUN serves multiple industries across domestic and international markets.
+                </p>
+                <p class="text-lg text-on-surface-variant leading-relaxed mb-8">
+                    Our facility combines traditional expertise with modern chemical processing to deliver products that meet the rigorous standards of global manufacturers, ensuring precision, consistency, and reliability in every batch.
+                </p>
+                
+                <div class="flex items-center gap-4 text-primary font-bold">
+                    <span class="material-symbols-outlined">verified_user</span>
+                    <span>Trusted Protein Solutions for 85+ Years</span>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 hover:bg-white hover:shadow-lg transition-all duration-300 group" data-aos="zoom-in" data-aos-delay="100">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:scale-110 transition-transform">history</span>
+                    <h4 class="text-xl font-bold mb-2">Legacy & Foundation</h4>
+                    <p class="text-on-surface-variant text-sm">Decades of experience in dairy and protein processing since 1935.</p>
+                </div>
+
+                <div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 hover:bg-white hover:shadow-lg transition-all duration-300 group" data-aos="zoom-in" data-aos-delay="200">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:scale-110 transition-transform">biotech</span>
+                    <h4 class="text-xl font-bold mb-2">Casein Expertise</h4>
+                    <p class="text-on-surface-variant text-sm">Established 1999 with a focused vision for industrial quality leadership.</p>
+                </div>
+
+                <div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 hover:bg-white hover:shadow-lg transition-all duration-300 group" data-aos="zoom-in" data-aos-delay="300">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:scale-110 transition-transform">public</span>
+                    <h4 class="text-xl font-bold mb-2">Market Presence</h4>
+                    <p class="text-on-surface-variant text-sm">Domestic + Global supply serving industries across India and beyond.</p>
+                </div>
+
+                <div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 hover:bg-white hover:shadow-lg transition-all duration-300 group" data-aos="zoom-in" data-aos-delay="400">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:scale-110 transition-transform">precision_manufacturing</span>
+                    <h4 class="text-xl font-bold mb-2">Industry Applications</h4>
+                    <p class="text-on-surface-variant text-sm">High-performance solutions for adhesives, paints, textiles, and paper.</p>
+                </div>
+
+                <div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 hover:bg-white hover:shadow-lg transition-all duration-300 group" data-aos="zoom-in" data-aos-delay="500">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:scale-110 transition-transform">location_on</span>
+                    <h4 class="text-xl font-bold mb-2">Strategic Advantage</h4>
+                    <p class="text-on-surface-variant text-sm">Located in Morena, the Casein Capital, ensuring rich raw material access.</p>
+                </div>
+
+                <div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 hover:bg-white hover:shadow-lg transition-all duration-300 group" data-aos="zoom-in" data-aos-delay="600">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:scale-110 transition-transform">trending_up</span>
+                    <h4 class="text-xl font-bold mb-2">Core Strength</h4>
+                    <p class="text-on-surface-variant text-sm">Strong raw material access ensures stable production and competitive pricing.</p>
+                </div>
+
             </div>
         </div>
     </div>
 </section>
 
-<section id="contact" class="py-24 bg-slate-900 text-white overflow-hidden">
-    <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16">
-        <div data-aos="fade-right">
-            <h2 class="text-[#d4e3ff] font-headline font-extrabold text-4xl mb-8">Visit Our Studio</h2>
-            <div class="space-y-8">
-                <div class="flex gap-6">
-                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
-                        <span class="material-symbols-outlined text-[#d4e3ff]">location_on</span>
+    <section class="py-32 bg-surface-container-lowest" id="products">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+                <div data-aos="fade-right">
+                    <h2 class="text-primary text-sm font-bold tracking-widest uppercase mb-4">Product Portfolio</h2>
+                    <h3 class="text-4xl md:text-5xl font-headline font-bold">Precision-Grade Casein Range</h3>
+                </div>
+                <button class="flex items-center gap-2 text-primary font-bold group hover:underline">
+                    Download Brochure
+                    <span class="material-symbols-outlined group-hover:translate-y-1 transition-transform">download</span>
+                </button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="product-card bg-surface-container-low rounded-xl overflow-hidden transition-all duration-500 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-64 overflow-hidden relative">
+                        <img alt="Industrial Casein" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxWhMaziM39GtpzCSGfOz3XMbYask1tBmOcXtNwCAFGthmpy6PVDbsrs7Wo5IhlU8fTefOswpx4h5KWC8AVqId98TeJmS1kAxVxkKTZySDPN532JKWUK1uCrk-Y9idDSwKRjVYGnPVBZbkHDaG6ZbLm-alOiUv5jhUpIzbwRZKq2D3x4YhTZmcHj5BjZtA9ucAWeDljezTqDVWyu80hm_ipPaOJcfiOstOB8LwxGHtOWW_Z-g_CmRTjzqC0N7u-V7i9597nquBcQ"/>
+                        <div class="absolute top-4 right-4 bg-primary text-on-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase">Top Seller</div>
                     </div>
-                    <div>
-                        <p class="font-bold text-xl">Jiwaji Ganj, Morena</p>
-                        <p class="text-white/50">Madhya Pradesh, 476001</p>
+                    <div class="p-8 flex-grow">
+                        <h4 class="text-xl font-bold mb-3 font-headline">Industrial Grade Casein</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Engineered for adhesives, paints, and textile sizing with high bonding strength.</p>
+                    </div>
+                    <div class="px-8 pb-8">
+                        <button class="w-full bg-primary text-on-primary py-3 rounded-lg font-bold hover:bg-primary-container transition-colors active:scale-95">Get Price</button>
                     </div>
                 </div>
-                <div class="flex gap-6">
-                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
-                        <span class="material-symbols-outlined text-[#d4e3ff]">call</span>
+                
+                <div class="product-card bg-surface-container-low rounded-xl overflow-hidden transition-all duration-500 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-64 overflow-hidden relative">
+                        <img alt="Edible Casein" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSuQyy6ovHhwMaXnSPdPvv_CtbctzJZJpCJy5n93aRjglS3iUQtQJDmTEnSLIyLEZ-Uvz27-ud7vgAamTKf4pg4-QFmh1wNNvnHxGilycvehoveGKcjCSO4jd90EhUfN95JSjQJaPhGAEvH6GKxHLWLnR01HrUE--yEEuJ8zV1UI0XF-GfYMnfba0soc3ZWgh2RCjETmVVuvFtOooUiaQ-pDZFXiY4cA5nf55yOq1WY9UpZ-31qmmbi4LuVpIbJhW33WyJrqO62g"/>
                     </div>
-                    <div>
-                        <p class="font-bold text-xl">Call Us Directly</p>
-                        <p class="text-white/50">+91 (Morena Line)</p>
+                    <div class="p-8 flex-grow">
+                        <h4 class="text-xl font-bold mb-3 font-headline">Edible Grade Casein</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Refined nutritional casein for the food and beverage industry.</p>
+                    </div>
+                    <div class="px-8 pb-8">
+                        <button class="w-full bg-primary text-on-primary py-3 rounded-lg font-bold hover:bg-primary-container transition-colors active:scale-95">Get Price</button>
+                    </div>
+                </div>
+
+                <div class="product-card bg-surface-container-low rounded-xl overflow-hidden transition-all duration-500 flex flex-col" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-64 overflow-hidden relative">
+                        <img alt="Casein Powder" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSzG1kpfN2o9g6oqTDrRswyG9vlgTwSkzOuIn41mmzuSAsQzr9mJu8ZumphXxjcoUajlpIoAdRDLfvxisLQ3dk4tytSBObQnrH9qdyCw40D328YX7LUpkR1kOU0EnIIxYVjzbjGbu54AdynGYwLfiKn234zrHXSgI8nuH4HcZu9OVaHZ5xKDNLlgdSEd7nqvjXf4SJwlTlxp3nrLhN5SUoSPIzD9Y3o8DcaJPvzupGgh1Akw4AakoswnQCShrWKuiKcnE7z3e5KA"/>
+                    </div>
+                    <div class="p-8 flex-grow">
+                        <h4 class="text-xl font-bold mb-3 font-headline">Casein Powder</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Versatile mesh sizes available for varied industrial uses.</p>
+                    </div>
+                    <div class="px-8 pb-8">
+                        <button class="w-full bg-primary text-on-primary py-3 rounded-lg font-bold hover:bg-primary-container transition-colors active:scale-95">Get Price</button>
+                    </div>
+                </div>
+
+                <div class="product-card bg-surface-container-low rounded-xl overflow-hidden transition-all duration-500 flex flex-col" data-aos="fade-up" data-aos-delay="400">
+                    <div class="h-64 overflow-hidden relative">
+                        <img alt="Buttermilk Casein" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGbUPEyg4d-bqKUhnuruaCgDm0P_dJDrMvR7IA1aOdp5kw6SSMnhb2N8IFCPeT1ahHw9xOybafncix2dQzXjVWRlNGMkm4HofRfY65grXWdENNakVl1lQmD0137NMDSjQve_gREsKYnz0C75j8XJaPa638kB0S7GDk9bey-xbT_k8YvdhOA9tTwwkOjIAIg6gDjlJMhwOiovo5l2vQZXMeThKuPjEiXxhoOYTXbelNL8RweCb9niNNKZ9DdBmOnnyPNUg0n-B8tQ"/>
+                    </div>
+                    <div class="p-8 flex-grow">
+                        <h4 class="text-xl font-bold mb-3 font-headline">Buttermilk Casein</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Specialized grade utilized primarily in paper coatings and leather finishing.</p>
+                    </div>
+                    <div class="px-8 pb-8">
+                        <button class="w-full bg-primary text-on-primary py-3 rounded-lg font-bold hover:bg-primary-container transition-colors active:scale-95">Get Price</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="bg-white/5 p-10 rounded-[2rem] backdrop-blur-xl border border-white/10 shadow-2xl" data-aos="zoom-in-left">
-            <h3 class="text-2xl font-bold mb-6">Send an Inquiry</h3>
-            <form class="space-y-4">
-                <input required class="w-full bg-white/5 border-white/10 rounded-xl p-4 text-white focus:ring-2 focus:ring-[#005dac] outline-none transition-all" placeholder="Your Full Name" type="text"/>
-                <input required class="w-full bg-white/5 border-white/10 rounded-xl p-4 text-white focus:ring-2 focus:ring-[#005dac] outline-none transition-all" placeholder="Mobile Number" type="tel"/>
-                <button class="w-full bg-[#005dac] text-white py-4 rounded-xl font-bold hover:scale-[1.02] active:scale-95 transition-all shadow-lg shadow-primary/20">Send Message</button>
-            </form>
+    </section>
+
+    
+<!-- Text -->
+<section class="py-32 bg-primary text-on-primary overflow-hidden relative" id="industries">
+    <div class="absolute top-0 right-0 w-1/3 h-full bg-primary-container/20 -skew-x-12 translate-x-1/2"></div>
+    
+    <div class="max-w-screen-2xl mx-auto px-8 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+            
+            <div data-aos="fade-right">
+                <h2 class="text-tertiary-fixed-dim text-sm font-bold tracking-widest uppercase mb-4">Industrial Versatility</h2>
+                <h3 class="text-4xl md:text-5xl font-headline font-bold mb-8 leading-tight">Precision Performance for Global Industries</h3>
+                <p class="text-xl text-blue-100/80 mb-10 leading-relaxed">
+                    Sagun Casein is engineered to deliver reliable performance across a wide range of sectors. Our products meet specific functional requirements, ensuring consistency and efficiency in every application.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex items-start gap-3 group">
+                        <span class="material-symbols-outlined text-tertiary-fixed-dim font-bold">check_circle</span>
+                        <div>
+                            <h5 class="font-bold">Consistent Quality</h5>
+                            <p class="text-sm text-blue-100/60">Uniform batch standards.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 group">
+                        <span class="material-symbols-outlined text-tertiary-fixed-dim font-bold">check_circle</span>
+                        <div>
+                            <h5 class="font-bold">Customizable</h5>
+                            <p class="text-sm text-blue-100/60">Tailored specifications.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 group">
+                        <span class="material-symbols-outlined text-tertiary-fixed-dim font-bold">check_circle</span>
+                        <div>
+                            <h5 class="font-bold">Reliable Supply</h5>
+                            <p class="text-sm text-blue-100/60">Stable bulk logistics.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 group">
+                        <span class="material-symbols-outlined text-tertiary-fixed-dim font-bold">check_circle</span>
+                        <div>
+                            <h5 class="font-bold">Competitive</h5>
+                            <p class="text-sm text-blue-100/60">Direct factory pricing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+                <div class="space-y-4 pt-12">
+                    <div class="relative group rounded-xl overflow-hidden shadow-2xl">
+                        <img alt="Food Industry" class="w-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTdZzDuft1yDbYlhT1aAHA0klM2TQFalqf46gn9LE-vnZws9iApqf4RRwajZHgx2CYGO4KMFdEAmD4EdGSN7suohWQ0if4fsqGcq01b70HtYrkm7AGzUNflG2beCJo9Wu5RHqIMUNkswsFz6_9leew6EUuwAFT4beiHFA1AXjTEcRelCy7Huhyl_zGE2BhdJHe7bG_u5NIKBJumF1QNiTfkHDUWpQEomkT98b4b8MClBYO2v5dLIaED7B3AjtBkeq3z0F8Fn8l-w"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex flex-col justify-end p-6">
+                            <span class="material-symbols-outlined text-tertiary-fixed-dim mb-2">restaurant</span>
+                            <h4 class="font-bold text-lg">Food & Bev</h4>
+                            <p class="text-xs text-blue-100/70 hidden group-hover:block transition-all">Emulsification & texture improvement.</p>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-xl overflow-hidden shadow-2xl">
+                        <img alt="Matchbox Industry" class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxWhMaziM39GtpzCSGfOz3XMbYask1tBmOcXtNwCAFGthmpy6PVDbsrs7Wo5IhlU8fTefOswpx4h5KWC8AVqId98TeJmS1kAxVxkKTZySDPN532JKWUK1uCrk-Y9idDSwKRjVYGnPVBZbkHDaG6ZbLm-alOiUv5jhUpIzbwRZKq2D3x4YhTZmcHj5BjZtA9ucAWeDljezTqDVWyu80hm_ipPaOJcfiOstOB8LwxGHtOWW_Z-g_CmRTjzqC0N7u-V7i9597nquBcQ"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex flex-col justify-end p-6">
+                            <span class="material-symbols-outlined text-tertiary-fixed-dim mb-2">inventory</span>
+                            <h4 class="font-bold text-lg">Matchbox & Binding</h4>
+                            <p class="text-xs text-blue-100/70 hidden group-hover:block transition-all">Superior safety match adhesion.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="relative group rounded-xl overflow-hidden shadow-2xl">
+                        <img alt="Paint Industry" class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7CTII7VRX8_GNgQwdG247OO0tPoZSLZ8ia27d5nyobL4ahVVN6l4HLD9n5GVqq2-aBkuwawbSu5SBniBCNctHmuNDQ7ovba3TSefRAvYdRXU4WVHwpRuEFb_3JyMbjs5uloLic9jY76i1DMkn7V1EfUswIQobvVrynMz-4rnAjr3ZDaGmfn6GhjAcPhaOkQCJLQNtHWzVyxbKtwOzpxy7rVqUFFkoAtCvU2trg0n8nBP0rMFfWMat169uAHHC54QvbvDl6kiGOg"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex flex-col justify-end p-6">
+                            <span class="material-symbols-outlined text-tertiary-fixed-dim mb-2">format_paint</span>
+                            <h4 class="font-bold text-lg">Paints & Coatings</h4>
+                            <p class="text-xs text-blue-100/70 hidden group-hover:block transition-all">Improved film formation & finish.</p>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-xl overflow-hidden shadow-2xl">
+                        <img alt="Leather Coating" class="w-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrskal6WuDGR-wWgNT04A9BxtjoQxKaGdJTnfnAWvFxKeXh6UjMYP4IMh9O1v_8rqckQ4LEGUWtnsOvDb0Q54Bp-3Beh8bO-o-y9PLwbRh9MHkMofSIG3p6CIABDqJC0ghuY-vmRL24-aPRXnBmNPlJXsod7wNj-3_6e6dDVgtKv3VObUcCyuZiYw7X8rSkRfH68wCi2Jq1g2zdWROf4thVfWhyzPXsGK66cPSvR1cxm5rm6e1O8SZ6qVWSoXZeNHlqSbsf-ifiw"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex flex-col justify-end p-6">
+                            <span class="material-symbols-outlined text-tertiary-fixed-dim mb-2">checkroom</span>
+                            <h4 class="font-bold text-lg">Leather & Textile</h4>
+                            <p class="text-xs text-blue-100/70 hidden group-hover:block transition-all">Superior surface coating & flexibility.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<footer class="bg-white py-12 border-t border-slate-100 text-center">
-    <p class="text-slate-400 text-sm">© 2026 Sagun Color Lab & Studio. Morena's Premier Visual Curators.</p>
+<!-- Ratings & Reviews -->
+<section class="py-32 bg-surface-container-low" id="testimonial">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="text-primary text-sm font-bold tracking-widest uppercase mb-4">Client Feedback</h2>
+<h3 class="text-4xl md:text-5xl font-headline font-bold">Trusted by Global Manufacturers</h3>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white p-10 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex text-tertiary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8 leading-relaxed">"Sagun Casein has been our primary supplier for industrial adhesives for 5 years. Their consistency in mesh size and protein quality is unmatched in the Indian market."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold">RK</div>
+<div>
+<h5 class="font-bold">Rajesh Kumar</h5>
+<p class="text-xs text-on-surface-variant font-label uppercase">Procurement Head, Apex Adhesives</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-10 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex text-tertiary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8 leading-relaxed">"Exceptional logistics support. Even with large scale orders, the delivery to our plant in Maharashtra was ahead of schedule. Highly recommend their Buttermilk Casein."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold">MS</div>
+<div>
+<h5 class="font-bold">Meera Singh</h5>
+<p class="text-xs text-on-surface-variant font-label uppercase">Director, PaperTech India</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-10 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex text-tertiary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8 leading-relaxed">"The level of technical detail they provide with their chemical analysis reports is outstanding. Truly a professional partner for high-end chemical synthesis."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold">AJ</div>
+<div>
+<h5 class="font-bold">Amit Jain</h5>
+<p class="text-xs text-on-surface-variant font-label uppercase">QC Manager, Global ChemCorp</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+  <section class="py-32 bg-white" id="contact">
+    <div class="max-w-screen-2xl mx-auto px-8">
+        <div class="grid lg:grid-cols-2 gap-20 items-start">
+            
+            <div data-aos="fade-up">
+                <span class="inline-block px-4 py-1.5 bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase rounded-full mb-6">
+                    Global Sales & Support
+                </span>
+                <h3 class="text-4xl md:text-5xl font-headline font-bold mb-8 text-primary">Ready to Scale Your Production?</h3>
+                <p class="text-lg text-on-surface-variant mb-12 leading-relaxed">
+                    Consult with our technical experts for customized casein specifications, bulk pricing, and international logistics support.
+                </p>
+
+                <div class="space-y-8 mb-12">
+                    <div class="flex items-start gap-6 group">
+                        <div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                            <span class="material-symbols-outlined text-2xl group-hover:rotate-12">location_on</span>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-lg">Factory Location</h5>
+                            <p class="text-on-surface-variant">Sagun Casein Plant<br/>Morena, Madhya Pradesh - 476001, India</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-6 group">
+                        <div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                            <span class="material-symbols-outlined text-2xl group-hover:rotate-12">call</span>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-lg">Business Inquiries</h5>
+                            <p class="text-on-surface-variant">+91 7772878122</p>
+                            <p class="text-xs text-primary font-bold mt-1">Mon-Sat: 9:00 AM - 7:00 PM IST</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-6 group">
+                        <div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                            <span class="material-symbols-outlined text-2xl group-hover:rotate-12">mail</span>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-lg">Email Us</h5>
+                            <p class="text-on-surface-variant">info@saguncasein.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inline-flex items-center gap-3 p-4 bg-surface-container-low rounded-xl border border-outline-variant/20">
+                    <span class="relative flex h-3 w-3">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                    </span>
+                    <span class="text-sm font-medium text-on-surface-variant">Average Response Time: <span class="text-primary font-bold">24 Hours</span></span>
+                </div>
+            </div>
+
+            <div class="bg-surface-container-low p-8 md:p-12 rounded-3xl border border-outline-variant/10 shadow-2xl relative" data-aos="fade-left">
+                
+                <h4 class="text-2xl font-bold mb-8 font-headline">Request a Quote</h4>
+                                <form 
+                    action="https://formspree.io/f/YOUR_FORM_ID_HERE" 
+                    method="POST" 
+                    class="space-y-5" 
+                    id="inquiryForm">
+                    
+                    <div class="grid md:grid-cols-2 gap-5">
+                        <div class="space-y-1">
+                            <label class="text-xs font-bold text-on-surface-variant uppercase ml-1">Full Name</label>
+                            <input name="name" class="w-full bg-white border-outline-variant/30 rounded-xl h-14 px-4 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" placeholder="John Doe" type="text" required/>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-xs font-bold text-on-surface-variant uppercase ml-1">Company Name</label>
+                            <input name="company" class="w-full bg-white border-outline-variant/30 rounded-xl h-14 px-4 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" placeholder="Enter Company" type="text" required/>
+                        </div>
+                    </div>
+                
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold text-on-surface-variant uppercase ml-1">Email Address</label>
+                        <input name="email" class="w-full bg-white border-outline-variant/30 rounded-xl h-14 px-4 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" placeholder="email@company.com" type="email" required/>
+                    </div>
+                
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold text-on-surface-variant uppercase ml-1">Industry Application</label>
+                        <select name="industry" class="w-full bg-white border-outline-variant/30 rounded-xl h-14 px-4 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none">
+                            <option>Industrial Grade Casein</option>
+                            <option>Edible Grade Casein</option>
+                            <option>Paint & Coatings Industry</option>
+                            <option>Adhesives & Binding</option>
+                            <option>Textile & Leather</option>
+                            <option>Pharmaceutical Grade</option>
+                        </select>
+                    </div>
+                
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold text-on-surface-variant uppercase ml-1">Message / Requirements</label>
+                        <textarea name="message" class="w-full bg-white border-outline-variant/30 rounded-xl p-4 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" placeholder="Please specify mesh size or quantity needed..." rows="4"></textarea>
+                    </div>
+                
+                    <button type="submit" class="w-full bg-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-primary-container hover:shadow-lg transition-all flex items-center justify-center gap-3 active:scale-95 group">
+                        Submit Inquiry 
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
+                    </button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    
+</main>
+
+<footer class="w-full border-t border-slate-200 bg-slate-50 py-16">
+    <div class="max-w-screen-2xl mx-auto px-8 text-center">
+        <p class="text-slate-500 text-sm">© 2026 Sagun Casein. All rights reserved. Industrial Grade Excellence.</p>
+    </div>
 </footer>
+
 
 <div class="fixed bottom-8 right-8 z-[100]">
     <a href="https://wa.me/7772878122" target="_blank" class="bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform">
@@ -213,26 +620,145 @@
     </a>
 </div>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
 <script>
-    // 1. Animation Initializer
+    // 1. Initialize Animations (AOS)
     AOS.init({
-        duration: 1000,
+        duration: 800,
         once: true,
-        offset: 100
+        easing: 'ease-in-out'
     });
 
-    // 2. Typewriter Effect
-    var typed = new Typed('#typed-text', {
-        strings: ['Capturing Moments,', 'Creating Memories.'],
-        typeSpeed: 50,
-        backSpeed: 30,
-        backDelay: 2000,
-        loop: true,
-        cursorChar: '_'
-    });
+    // 2. Scroll Progress Bar
+    window.onscroll = function() {
+        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let scrolled = (winScroll / height) * 100;
+        const progressIndicator = document.getElementById("scroll-progress");
+        if(progressIndicator) progressIndicator.style.width = scrolled + "%";
+    };
+
+    // 3. Animated Counter Logic
+    const counters = document.querySelectorAll('.counter');
+    const speed = 100;
+
+    const startCounters = () => {
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
+
+                if (count < target) {
+                    // Optimized for both integers and decimals
+                    counter.innerText = (count + inc).toFixed(target % 1 === 0 ? 0 : 1);
+                    setTimeout(updateCount, 20);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCount();
+        });
+    }
+
+    // Trigger counters when stats bar is in view
+    const observer = new IntersectionObserver((entries) => {
+        if(entries[0].isIntersecting) {
+            startCounters();
+            observer.disconnect();
+        }
+    }, { threshold: 0.5 });
+
+    const statsElement = document.querySelector('.counter');
+    if (statsElement) observer.observe(statsElement.parentElement);
+
+    // 4. REAL Mail Integration (using Formspree)
+    const inquiryForm = document.getElementById('inquiryForm');
+
+    if (inquiryForm) {
+        inquiryForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const btn = this.querySelector('button');
+            const originalHTML = btn.innerHTML;
+            
+            // Start Visual Feedback
+            btn.disabled = true;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Sending...';
+            btn.style.opacity = '0.8';
+
+            // Gather Form Data
+            const formData = new FormData(this);
+            
+            try {
+                // REPLACE 'YOUR_FORMSPREE_ID' with your actual ID from formspree.io
+                const response = await fetch('https://formspree.io/f/xdawrako', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Success State
+                    btn.innerHTML = 'Sent Successfully! ✅';
+                    btn.classList.remove('bg-primary');
+                    btn.classList.add('bg-green-600');
+                    btn.style.opacity = '1';
+                    this.reset();
+
+                    // Revert button after 5 seconds
+                    setTimeout(() => {
+                        btn.innerHTML = originalHTML;
+                        btn.classList.remove('bg-green-600');
+                        btn.classList.add('bg-primary');
+                        btn.disabled = false;
+                    }, 5000);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                // Error State
+                btn.innerHTML = 'Error! Try Again ❌';
+                btn.classList.replace('bg-primary', 'bg-red-600');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.classList.replace('bg-red-600', 'bg-primary');
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                }, 3000);
+            }
+        });
+    }
+    
+    // 5. Hamburger Menu Logic
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuBtn && mobileMenu) {
+        const menuIcon = mobileMenuBtn.querySelector('.material-symbols-outlined');
+
+        // Toggle menu visibility
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            
+            // Switch icon between 'menu' and 'close'
+            menuIcon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+        });
+
+        // Close menu when a link is clicked
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                menuIcon.textContent = 'menu';
+            });
+        });
+    }
+    
 </script>
 
 </body>
